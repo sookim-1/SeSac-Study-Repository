@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		761DA239272AB79200553F64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761DA238272AB79200553F64 /* AppDelegate.swift */; };
 		761DA23B272AB79200553F64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761DA23A272AB79200553F64 /* SceneDelegate.swift */; };
-		761DA23D272AB79200553F64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761DA23C272AB79200553F64 /* ViewController.swift */; };
+		761DA23D272AB79200553F64 /* NetflixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761DA23C272AB79200553F64 /* NetflixViewController.swift */; };
 		761DA240272AB79300553F64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 761DA23E272AB79300553F64 /* Main.storyboard */; };
 		761DA242272AB79400553F64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 761DA241272AB79400553F64 /* Assets.xcassets */; };
 		761DA245272AB79400553F64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 761DA243272AB79400553F64 /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		761DA235272AB79200553F64 /* UI-Basic-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UI-Basic-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		761DA238272AB79200553F64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		761DA23A272AB79200553F64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		761DA23C272AB79200553F64 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		761DA23C272AB79200553F64 /* NetflixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixViewController.swift; sourceTree = "<group>"; };
 		761DA23F272AB79300553F64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		761DA241272AB79400553F64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		761DA244272AB79400553F64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 			children = (
 				761DA238272AB79200553F64 /* AppDelegate.swift */,
 				761DA23A272AB79200553F64 /* SceneDelegate.swift */,
-				761DA23C272AB79200553F64 /* ViewController.swift */,
+				761DA23C272AB79200553F64 /* NetflixViewController.swift */,
 				761DA23E272AB79300553F64 /* Main.storyboard */,
 				761DA241272AB79400553F64 /* Assets.xcassets */,
 				761DA243272AB79400553F64 /* LaunchScreen.storyboard */,
@@ -138,7 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				761DA23D272AB79200553F64 /* ViewController.swift in Sources */,
+				761DA23D272AB79200553F64 /* NetflixViewController.swift in Sources */,
 				761DA239272AB79200553F64 /* AppDelegate.swift in Sources */,
 				761DA23B272AB79200553F64 /* SceneDelegate.swift in Sources */,
 			);
