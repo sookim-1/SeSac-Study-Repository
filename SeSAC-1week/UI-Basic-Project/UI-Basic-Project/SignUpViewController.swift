@@ -48,6 +48,11 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func clickSignUp(_ sender: UIButton) {
+        print("이메일 :" + emailTextField.text!)
+        print("비밀번호 :" + passwordTextField.text!)
+        print("닉네임 :" + nicknameTextField.text!)
+        print("위치 :" + locationTextField.text!)
+        print("추천코드 :" + referenceCodeTextField.text!)
     }
     
     @IBAction func switchHiddenTextField(_ sender: UISwitch) {
