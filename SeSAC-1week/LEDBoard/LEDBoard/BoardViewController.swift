@@ -22,9 +22,11 @@ class BoardViewController: UIViewController {
     }
 
     @IBAction func sendToLabel(_ sender: UIButton) {
+        ResultLabel.text = UserTextField.text
     }
     
     @IBAction func changeColor(_ sender: UIButton) {
+        ResultLabel.textColor = getRandomColor()
     }
     
     func configure() {
@@ -42,6 +44,14 @@ class BoardViewController: UIViewController {
         TextColorButton.layer.borderColor = UIColor.label.cgColor
         TextColorButton.layer.cornerRadius = 10
         TextColorButton.tintColor = .systemRed
+    }
+    
+    func getRandomColor() -> UIColor {
+        let red : CGFloat = CGFloat.random(in: 0...1)
+        let green : CGFloat = CGFloat.random(in: 0...1)
+        let blue : CGFloat = CGFloat.random(in: 0...1)
+
+        return UIColor(red: red, green: green, blue: blue, alpha: 1)
     }
 }
 
