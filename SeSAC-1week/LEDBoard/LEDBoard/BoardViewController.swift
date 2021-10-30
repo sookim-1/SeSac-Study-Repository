@@ -15,10 +15,13 @@ class BoardViewController: UIViewController {
     @IBOutlet var TextColorButton: UIButton!
     @IBOutlet var UserTextField: UITextField!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configure()
+        createDismissKeyboardTapGesture()
+        UserTextField.delegate = self
     }
 
     @IBAction func sendToLabel(_ sender: UIButton) {
@@ -53,5 +56,20 @@ class BoardViewController: UIViewController {
 
         return UIColor(red: red, green: green, blue: blue, alpha: 1)
     }
+    
+    func createDismissKeyboardTapGesture() {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @IBAction func exitTextField(_ sender: UITextField) {
+        UserTextField.resignFirstResponder()
+    }
 }
 
+extension BoardViewController: UITextFieldDelegate {
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        UserTextField.resignFirstResponder()
+//        return true
+//    }
+}

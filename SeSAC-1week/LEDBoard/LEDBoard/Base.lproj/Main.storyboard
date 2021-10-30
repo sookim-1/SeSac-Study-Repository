@@ -34,6 +34,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="650" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="exitTextField:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="F8c-VF-KdF"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYk-K5-BkI" userLabel="Text Color Button">
                                         <rect key="frame" x="719" y="14.5" width="41" height="31"/>
