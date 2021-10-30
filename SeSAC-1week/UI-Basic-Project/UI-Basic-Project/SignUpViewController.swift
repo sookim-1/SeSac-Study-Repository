@@ -21,6 +21,7 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         
         configureTextField()
+        hiddenSwitch.setOn(false, animated: true)
     }
     
     func configureTextField() {
@@ -34,12 +35,25 @@ class SignUpViewController: UIViewController {
         
         emailTextField.keyboardType = .emailAddress
         referenceCodeTextField.keyboardType = .numberPad
+        
+        nicknameTextField.isHidden = true
+        locationTextField.isHidden = true
+        referenceCodeTextField.isHidden = true
     }
     
     @IBAction func clickSignUp(_ sender: UIButton) {
     }
     
     @IBAction func switchHiddenTextField(_ sender: UISwitch) {
+        if hiddenSwitch.isOn == true {
+            nicknameTextField.isHidden = false
+            locationTextField.isHidden = false
+            referenceCodeTextField.isHidden = false
+        } else {
+            nicknameTextField.isHidden = true
+            locationTextField.isHidden = true
+            referenceCodeTextField.isHidden = true
+        }
     }
     
 }
