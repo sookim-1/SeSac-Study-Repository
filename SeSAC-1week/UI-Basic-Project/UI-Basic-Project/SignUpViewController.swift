@@ -19,7 +19,21 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        configureTextField()
+    }
+    
+    func configureTextField() {
+        emailTextField.placeholder = "이메일 주소 또는 전화번호"
+        passwordTextField.placeholder = "비밀번호"
+        nicknameTextField.placeholder = "닉네임"
+        locationTextField.placeholder = "위치"
+        referenceCodeTextField.placeholder = "추천 코드 입력"
+        
+        passwordTextField.isSecureTextEntry = true
+        
+        emailTextField.keyboardType = .emailAddress
+        referenceCodeTextField.keyboardType = .numberPad
     }
     
     @IBAction func clickSignUp(_ sender: UIButton) {

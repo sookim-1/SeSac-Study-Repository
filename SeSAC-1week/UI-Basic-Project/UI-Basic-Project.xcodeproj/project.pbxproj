@@ -15,6 +15,7 @@
 		761DA245272AB79400553F64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 761DA243272AB79400553F64 /* LaunchScreen.storyboard */; };
 		761DA24F272AD09B00553F64 /* BaeminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761DA24E272AD09B00553F64 /* BaeminViewController.swift */; };
 		76A09DF1272D514500451A88 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A09DF0272D514500451A88 /* SignUpViewController.swift */; };
+		76A09DF3272D54CE00451A88 /* SignUpTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A09DF2272D54CE00451A88 /* SignUpTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		761DA246272AB79400553F64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		761DA24E272AD09B00553F64 /* BaeminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaeminViewController.swift; sourceTree = "<group>"; };
 		76A09DF0272D514500451A88 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		76A09DF2272D54CE00451A88 /* SignUpTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				761DA246272AB79400553F64 /* Info.plist */,
 				761DA24E272AD09B00553F64 /* BaeminViewController.swift */,
 				76A09DF0272D514500451A88 /* SignUpViewController.swift */,
+				76A09DF2272D54CE00451A88 /* SignUpTextField.swift */,
 			);
 			path = "UI-Basic-Project";
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				761DA24F272AD09B00553F64 /* BaeminViewController.swift in Sources */,
 				761DA23D272AB79200553F64 /* NetflixViewController.swift in Sources */,
 				761DA239272AB79200553F64 /* AppDelegate.swift in Sources */,
+				76A09DF3272D54CE00451A88 /* SignUpTextField.swift in Sources */,
 				761DA23B272AB79200553F64 /* SceneDelegate.swift in Sources */,
 				76A09DF1272D514500451A88 /* SignUpViewController.swift in Sources */,
 			);
