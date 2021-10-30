@@ -22,6 +22,7 @@ class SignUpViewController: UIViewController {
         
         configureTextField()
         hiddenSwitch.setOn(false, animated: true)
+        createDismissKeyboardTapGesture()
     }
     
     func configureTextField() {
@@ -39,6 +40,11 @@ class SignUpViewController: UIViewController {
         nicknameTextField.isHidden = true
         locationTextField.isHidden = true
         referenceCodeTextField.isHidden = true
+    }
+    
+    func createDismissKeyboardTapGesture() {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
     }
     
     @IBAction func clickSignUp(_ sender: UIButton) {
