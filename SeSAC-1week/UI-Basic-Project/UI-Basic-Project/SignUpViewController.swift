@@ -48,6 +48,26 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func clickSignUp(_ sender: UIButton) {
+        guard let emailText = emailTextField.text,
+              let passwordText = passwordTextField.text else { return }
+        
+        let trimWhiteSpaceEmailText = emailText.trimmingCharacters(in: .whitespacesAndNewlines)
+        let trimWhiteSpacePasswordText = passwordText.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        if !trimWhiteSpaceEmailText.isEmpty && !trimWhiteSpacePasswordText.isEmpty {
+            if trimWhiteSpacePasswordText.count < 6 {
+                print("비밀번호 6자리이상입력해주세요")
+            }
+            else {
+                successSignUpPrint()
+            }
+        }
+        else {
+            print("이메일 및 비밀번호를 기입하세요")
+        }
+    }
+    
+    func successSignUpPrint() {
         print("이메일 :" + emailTextField.text!)
         print("비밀번호 :" + passwordTextField.text!)
         print("닉네임 :" + nicknameTextField.text!)
