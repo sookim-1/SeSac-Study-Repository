@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4oF-p2-3Pv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -20,15 +20,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d7L-f7-pQh">
                                 <rect key="frame" x="0.0" y="644" width="414" height="218"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="poster1" translatesAutoresizingMaskIntoConstraints="NO" id="y52-iF-e1z">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="poster2" translatesAutoresizingMaskIntoConstraints="NO" id="y52-iF-e1z">
                                         <rect key="frame" x="8" y="77" width="115" height="102"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="poster2" translatesAutoresizingMaskIntoConstraints="NO" id="ir0-cP-Qhd">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="poster3" translatesAutoresizingMaskIntoConstraints="NO" id="ir0-cP-Qhd">
                                         <rect key="frame" x="150" y="77" width="115" height="102"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="poster3" translatesAutoresizingMaskIntoConstraints="NO" id="cyj-MJ-Wln">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="poster4" translatesAutoresizingMaskIntoConstraints="NO" id="cyj-MJ-Wln">
                                         <rect key="frame" x="291" y="77" width="115" height="102"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -42,7 +42,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poster9" translatesAutoresizingMaskIntoConstraints="NO" id="OP1-bz-scI">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poster1" translatesAutoresizingMaskIntoConstraints="NO" id="OP1-bz-scI">
                                 <rect key="frame" x="0.0" y="44" width="414" height="600"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="600" id="lFb-gc-bYW"/>
@@ -93,6 +93,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="play_normal"/>
+                                <connections>
+                                    <action selector="clickRandomButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LBY-21-7zk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJb-0i-aDL">
                                 <rect key="frame" x="328" y="552" width="54" height="66"/>
@@ -122,6 +125,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="mainImageView" destination="OP1-bz-scI" id="Yb1-eI-8cw"/>
                         <outlet property="subImageView1" destination="y52-iF-e1z" id="gs6-MI-KG5"/>
                         <outlet property="subImageView2" destination="ir0-cP-Qhd" id="0CY-Wh-nRv"/>
                         <outlet property="subImageView3" destination="cyj-MJ-Wln" id="4c6-kq-bNY"/>
@@ -513,7 +517,7 @@
         <image name="poster1" width="240" height="361"/>
         <image name="poster2" width="240" height="361"/>
         <image name="poster3" width="240" height="361"/>
-        <image name="poster9" width="240" height="361"/>
+        <image name="poster4" width="240" height="361"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
