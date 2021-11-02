@@ -13,6 +13,14 @@
 		76B18F0E273197DA00B5BFBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76B18F0C273197DA00B5BFBB /* Main.storyboard */; };
 		76B18F10273197DC00B5BFBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76B18F0F273197DC00B5BFBB /* Assets.xcassets */; };
 		76B18F13273197DC00B5BFBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76B18F11273197DC00B5BFBB /* LaunchScreen.storyboard */; };
+		76B18F2F2731A3BC00B5BFBB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B18F2E2731A3BC00B5BFBB /* HomeViewController.swift */; };
+		76B18F312731A3C500B5BFBB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B18F302731A3C500B5BFBB /* SearchViewController.swift */; };
+		76B18F332731A3CD00B5BFBB /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B18F322731A3CD00B5BFBB /* AddViewController.swift */; };
+		76B18F352731A3D500B5BFBB /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76B18F342731A3D500B5BFBB /* Home.storyboard */; };
+		76B18F372731A3DD00B5BFBB /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76B18F362731A3DD00B5BFBB /* Calendar.storyboard */; };
+		76B18F392731A3EA00B5BFBB /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76B18F382731A3EA00B5BFBB /* Search.storyboard */; };
+		76B18F3B2731A3F100B5BFBB /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76B18F3A2731A3F100B5BFBB /* Setting.storyboard */; };
+		76B18F3D2731A3F800B5BFBB /* Content.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76B18F3C2731A3F800B5BFBB /* Content.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +32,14 @@
 		76B18F0F273197DC00B5BFBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76B18F12273197DC00B5BFBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76B18F14273197DC00B5BFBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76B18F2E2731A3BC00B5BFBB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		76B18F302731A3C500B5BFBB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		76B18F322731A3CD00B5BFBB /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		76B18F342731A3D500B5BFBB /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		76B18F362731A3DD00B5BFBB /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
+		76B18F382731A3EA00B5BFBB /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		76B18F3A2731A3F100B5BFBB /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		76B18F3C2731A3F800B5BFBB /* Content.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Content.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +72,8 @@
 		76B18F05273197DA00B5BFBB /* Diary-Project */ = {
 			isa = PBXGroup;
 			children = (
+				76B18F2D2731A3A300B5BFBB /* Storyboard */,
+				76B18F2C2731A39900B5BFBB /* ViewController */,
 				76B18F06273197DA00B5BFBB /* AppDelegate.swift */,
 				76B18F08273197DA00B5BFBB /* SceneDelegate.swift */,
 				76B18F0A273197DA00B5BFBB /* ViewController.swift */,
@@ -65,6 +83,28 @@
 				76B18F14273197DC00B5BFBB /* Info.plist */,
 			);
 			path = "Diary-Project";
+			sourceTree = "<group>";
+		};
+		76B18F2C2731A39900B5BFBB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				76B18F2E2731A3BC00B5BFBB /* HomeViewController.swift */,
+				76B18F302731A3C500B5BFBB /* SearchViewController.swift */,
+				76B18F322731A3CD00B5BFBB /* AddViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		76B18F2D2731A3A300B5BFBB /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				76B18F342731A3D500B5BFBB /* Home.storyboard */,
+				76B18F362731A3DD00B5BFBB /* Calendar.storyboard */,
+				76B18F382731A3EA00B5BFBB /* Search.storyboard */,
+				76B18F3A2731A3F100B5BFBB /* Setting.storyboard */,
+				76B18F3C2731A3F800B5BFBB /* Content.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +167,12 @@
 			files = (
 				76B18F13273197DC00B5BFBB /* LaunchScreen.storyboard in Resources */,
 				76B18F10273197DC00B5BFBB /* Assets.xcassets in Resources */,
+				76B18F3B2731A3F100B5BFBB /* Setting.storyboard in Resources */,
 				76B18F0E273197DA00B5BFBB /* Main.storyboard in Resources */,
+				76B18F3D2731A3F800B5BFBB /* Content.storyboard in Resources */,
+				76B18F372731A3DD00B5BFBB /* Calendar.storyboard in Resources */,
+				76B18F392731A3EA00B5BFBB /* Search.storyboard in Resources */,
+				76B18F352731A3D500B5BFBB /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +183,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76B18F312731A3C500B5BFBB /* SearchViewController.swift in Sources */,
 				76B18F0B273197DA00B5BFBB /* ViewController.swift in Sources */,
+				76B18F332731A3CD00B5BFBB /* AddViewController.swift in Sources */,
 				76B18F07273197DA00B5BFBB /* AppDelegate.swift in Sources */,
 				76B18F09273197DA00B5BFBB /* SceneDelegate.swift in Sources */,
+				76B18F2F2731A3BC00B5BFBB /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
