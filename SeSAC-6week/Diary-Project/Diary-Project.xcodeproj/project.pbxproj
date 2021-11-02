@@ -21,6 +21,7 @@
 		76B18F392731A3EA00B5BFBB /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76B18F382731A3EA00B5BFBB /* Search.storyboard */; };
 		76B18F3B2731A3F100B5BFBB /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76B18F3A2731A3F100B5BFBB /* Setting.storyboard */; };
 		76B18F3D2731A3F800B5BFBB /* Content.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76B18F3C2731A3F800B5BFBB /* Content.storyboard */; };
+		76B18F402731AA7000B5BFBB /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B18F3F2731AA7000B5BFBB /* SearchCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		76B18F382731A3EA00B5BFBB /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		76B18F3A2731A3F100B5BFBB /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		76B18F3C2731A3F800B5BFBB /* Content.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Content.storyboard; sourceTree = "<group>"; };
+		76B18F3F2731AA7000B5BFBB /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		76B18F05273197DA00B5BFBB /* Diary-Project */ = {
 			isa = PBXGroup;
 			children = (
+				76B18F3E2731AA5A00B5BFBB /* View */,
 				76B18F2D2731A3A300B5BFBB /* Storyboard */,
 				76B18F2C2731A39900B5BFBB /* ViewController */,
 				76B18F06273197DA00B5BFBB /* AppDelegate.swift */,
@@ -105,6 +108,14 @@
 				76B18F3C2731A3F800B5BFBB /* Content.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		76B18F3E2731AA5A00B5BFBB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				76B18F3F2731AA7000B5BFBB /* SearchCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +197,7 @@
 				76B18F312731A3C500B5BFBB /* SearchViewController.swift in Sources */,
 				76B18F0B273197DA00B5BFBB /* ViewController.swift in Sources */,
 				76B18F332731A3CD00B5BFBB /* AddViewController.swift in Sources */,
+				76B18F402731AA7000B5BFBB /* SearchCell.swift in Sources */,
 				76B18F07273197DA00B5BFBB /* AppDelegate.swift in Sources */,
 				76B18F09273197DA00B5BFBB /* SceneDelegate.swift in Sources */,
 				76B18F2F2731A3BC00B5BFBB /* HomeViewController.swift in Sources */,
