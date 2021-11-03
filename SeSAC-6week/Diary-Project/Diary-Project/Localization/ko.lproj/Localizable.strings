@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  Diary-Project
+
+  Created by sookim on 2021/11/03.
+  
+*/
+
+"home_title" = "홈";
+"search_title" = "검색";

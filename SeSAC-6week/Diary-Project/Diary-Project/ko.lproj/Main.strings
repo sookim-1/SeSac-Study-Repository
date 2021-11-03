@@ -1,0 +1,12 @@
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "QZB-y5-Vyl"; */
+"QZB-y5-Vyl.title" = "Home";
+
+/* Class = "UITabBarItem"; title = "캘린더"; ObjectID = "cUH-MW-NA9"; */
+"cUH-MW-NA9.title" = "캘린더";
+
+/* Class = "UITabBarItem"; title = "설정"; ObjectID = "iig-Pl-Cdg"; */
+"iig-Pl-Cdg.title" = "설정";
+
+/* Class = "UITabBarItem"; title = "검색"; ObjectID = "tex-nm-kQc"; */
+"tex-nm-kQc.title" = "검색";

@@ -14,7 +14,7 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "검색"
+        title = LocalizebleStrings.searchTitle.localized
         searchTableView.delegate = self
         searchTableView.dataSource = self
     }

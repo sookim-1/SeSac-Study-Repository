@@ -12,7 +12,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "HOME"
+        title = LocalizebleStrings.homeTitle.localized
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(presentshow))
     }
     
