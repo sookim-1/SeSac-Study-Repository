@@ -17,7 +17,10 @@ class SearchCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        titleLabel.font = UIFont().verdanaBold
+        dateLabel.font = UIFont().verdanaBold
+        contentLabel.font = UIFont().verdanaBold
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
