@@ -14,7 +14,8 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setNavigationBar()
     }
     
     private func setNavigationBar() {
