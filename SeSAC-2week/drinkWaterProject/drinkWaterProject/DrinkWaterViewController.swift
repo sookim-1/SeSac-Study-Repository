@@ -8,10 +8,14 @@
 import UIKit
 
 class DrinkWaterViewController: UIViewController {
+    @IBOutlet var currentWaterAmountTextField: UITextField!
+    @IBOutlet var totalWaterAmountLabel: UILabel!
+    var totalWaterAmount: Int = UserDefaults.standard.integer(forKey: "totalWaterAmount")
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar()
+        totalWaterAmountLabel.text = String(totalWaterAmount)
     }
 
     private func setNavigationBar() {
@@ -20,6 +24,14 @@ class DrinkWaterViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: nil)
     }
 
+    @IBAction func drinkWater(_ sender: UIButton) {
+        guard let currentWaterAmount = currentWaterAmountTextField.text,
+              let currentAmount = Int(currentWaterAmount)
+        else { return }
 
+        totalWaterAmount += currentAmount
+        UserDefaults.standard.set(totalWaterAmount, forKey: "totalWaterAmount")
+        totalWaterAmountLabel.text = String(totalWaterAmount)
+    }
 }
 
