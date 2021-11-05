@@ -65,8 +65,12 @@ class DrinkWaterViewController: UIViewController {
         guard let recommendWaterAmount = recommendWaterAmount else { return }
 
         let literRecommendWaterAmount = recommendWaterAmount * 1000
-        let goalWaterAmount = Double(totalWaterAmount) / literRecommendWaterAmount
-        goalWaterAmountLabel.text = "목표의 \(Int(round(goalWaterAmount * 100)))%"
+        var goalWaterAmount = Int(round((Double(totalWaterAmount) / literRecommendWaterAmount) * 100))
+
+        if goalWaterAmount > 100 {
+            goalWaterAmount = 100
+        }
+        goalWaterAmountLabel.text = "목표의 \(goalWaterAmount)%"
     }
 }
 
