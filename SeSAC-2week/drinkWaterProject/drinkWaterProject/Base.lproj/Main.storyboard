@@ -96,6 +96,7 @@
                     <navigationItem key="navigationItem" id="4wX-Yj-FCS"/>
                     <connections>
                         <outlet property="currentWaterAmountTextField" destination="bzu-EM-eZh" id="z62-oo-bKr"/>
+                        <outlet property="goalWaterAmountLabel" destination="Ya4-WR-NGr" id="Kdm-Gz-IcO"/>
                         <outlet property="recommendWaterAmountLabel" destination="yD2-Oj-RdV" id="C1b-zh-EVS"/>
                         <outlet property="totalWaterAmountLabel" destination="7Na-4f-o48" id="lCI-dW-qwR"/>
                     </connections>
