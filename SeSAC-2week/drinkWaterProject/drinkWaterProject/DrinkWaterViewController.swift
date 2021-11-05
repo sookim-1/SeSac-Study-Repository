@@ -13,23 +13,58 @@ class DrinkWaterViewController: UIViewController {
     @IBOutlet var recommendWaterAmountLabel: UILabel!
     @IBOutlet var goalWaterAmountLabel: UILabel!
     @IBOutlet var characterImageView: UIImageView!
-    
+    @IBOutlet var drinkWaterButton: UIButton!
+    @IBOutlet var introduceLabel: UILabel!
+
     var totalWaterAmount: Int = UserDefaults.standard.integer(forKey: "totalWaterAmount")
     var recommendWaterAmount: Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar()
-        totalWaterAmountLabel.text = String(totalWaterAmount)
+        totalWaterAmountLabel.text = "\(String(totalWaterAmount))ml"
         getProfileData()
         refreshGoalWaterAmount(totalWaterAmount, recommendWaterAmount)
+        setInterfaceAttribute()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        getProfileData()
+    }
+
+    private func setInterfaceAttribute() {
+        introduceLabel.text = """
+        잘하셨어요!
+        오늘 마신양은
+        """
+        introduceLabel.textColor = .white
+        totalWaterAmountLabel.textColor = .white
+        goalWaterAmountLabel.textColor = .white
+        recommendWaterAmountLabel.textColor = .white
+
+        introduceLabel.font = .preferredFont(forTextStyle: .title2)
+        introduceLabel.numberOfLines = 2
+        totalWaterAmountLabel.font = .preferredFont(forTextStyle: .largeTitle)
+        goalWaterAmountLabel.font = .preferredFont(forTextStyle: .body)
+        recommendWaterAmountLabel.font = .preferredFont(forTextStyle: .body)
+
+        currentWaterAmountTextField.backgroundColor = self.view.backgroundColor
+        currentWaterAmountTextField.textColor = UIColor.white
+
+        drinkWaterButton.setTitle("물 마시기", for: .normal)
+        drinkWaterButton.backgroundColor = .white
+        drinkWaterButton.tintColor = .black
+
     }
 
     private func getProfileData() {
         guard let data = UserDefaults.standard.value(forKey: "profileModel") as? Data else { return }
         let profileModel = try? PropertyListDecoder().decode(ProfileModel.self, from: data)
         recommendWaterAmount = profileModel?.recommendWaterAmount()
-        recommendWaterAmountLabel.text = "\(recommendWaterAmount)"
+        let nickname = profileModel?.nickname
+        recommendWaterAmountLabel.text = "\(nickname!)님의 하루 물 권장 섭취량은 \(recommendWaterAmount!)L입니다."
     }
 
     private func setNavigationBar() {
@@ -53,7 +88,7 @@ class DrinkWaterViewController: UIViewController {
 
         totalWaterAmount += currentAmount
         UserDefaults.standard.set(totalWaterAmount, forKey: "totalWaterAmount")
-        totalWaterAmountLabel.text = String(totalWaterAmount)
+        totalWaterAmountLabel.text = "\(String(totalWaterAmount))ml"
     }
     
     @objc func presentProfileViewController() {
@@ -64,7 +99,7 @@ class DrinkWaterViewController: UIViewController {
     @objc func refreshTotalWaterAmount() {
         totalWaterAmount = 0
         UserDefaults.standard.set(totalWaterAmount, forKey: "totalWaterAmount")
-        totalWaterAmountLabel.text = String(totalWaterAmount)
+        totalWaterAmountLabel.text = "\(String(totalWaterAmount))ml"
         
         refreshGoalWaterAmount(totalWaterAmount, recommendWaterAmount)
     }
@@ -110,5 +145,14 @@ class DrinkWaterViewController: UIViewController {
         characterImageView.image = UIImage(named: imageNamed)
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.currentWaterAmountTextField.resignFirstResponder()
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.currentWaterAmountTextField.resignFirstResponder()
+        self.dismiss(animated: true, completion: nil)
+        return true
+    }
 }
 

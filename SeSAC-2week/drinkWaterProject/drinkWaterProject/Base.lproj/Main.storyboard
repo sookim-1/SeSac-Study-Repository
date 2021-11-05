@@ -37,6 +37,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="32" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="5j3-Jb-3Kt"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ml" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBP-m5-9a7">
                                         <rect key="frame" x="40" y="0.0" width="26" height="34"/>
@@ -97,7 +100,9 @@
                     <connections>
                         <outlet property="characterImageView" destination="eQ3-PR-GTf" id="Twv-vh-sLj"/>
                         <outlet property="currentWaterAmountTextField" destination="bzu-EM-eZh" id="z62-oo-bKr"/>
+                        <outlet property="drinkWaterButton" destination="TZj-fD-C8N" id="pDq-JO-yx5"/>
                         <outlet property="goalWaterAmountLabel" destination="Ya4-WR-NGr" id="Kdm-Gz-IcO"/>
+                        <outlet property="introduceLabel" destination="zFl-7j-Mc3" id="O8N-Bx-Ev6"/>
                         <outlet property="recommendWaterAmountLabel" destination="yD2-Oj-RdV" id="C1b-zh-EVS"/>
                         <outlet property="totalWaterAmountLabel" destination="7Na-4f-o48" id="lCI-dW-qwR"/>
                     </connections>
@@ -178,7 +183,11 @@
                     <connections>
                         <outlet property="heightTextField" destination="zHT-jb-13q" id="5AP-ha-EKw"/>
                         <outlet property="nicknameTextField" destination="z62-nK-8zm" id="lQv-JK-lW0"/>
+                        <outlet property="profileImage" destination="c9o-t7-XsT" id="OP9-kR-e6E"/>
                         <outlet property="weightTextField" destination="DHD-tX-cvg" id="zXT-pI-oYR"/>
+                        <outletCollection property="profileDescriptionLabel" destination="3ON-o3-qPl" collectionClass="NSMutableArray" id="8kh-xW-NI2"/>
+                        <outletCollection property="profileDescriptionLabel" destination="J8K-o3-s0O" collectionClass="NSMutableArray" id="tIb-sJ-ohW"/>
+                        <outletCollection property="profileDescriptionLabel" destination="PTS-7E-g0q" collectionClass="NSMutableArray" id="24A-Vd-8t2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E3H-Yj-Fpa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
