@@ -33,10 +33,17 @@ class DrinkWaterViewController: UIViewController {
     }
 
     private func setNavigationBar() {
+        let barAppearance = UINavigationBarAppearance()
+
+        barAppearance.backgroundColor = UIColor(red: 79/255, green: 158/255, blue: 127/255, alpha: 1.0)
+        self.navigationItem.standardAppearance = barAppearance
+        self.navigationItem.scrollEdgeAppearance = barAppearance
+
         self.title = "물 마시기"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refreshTotalWaterAmount))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(presentProfileViewController))
-        refreshGoalWaterAmount(totalWaterAmount, recommendWaterAmount)
+        self.navigationController?.navigationBar.tintColor = .white
+        self.view.backgroundColor = UIColor(red: 79/255, green: 158/255, blue: 127/255, alpha: 1.0)
     }
 
     @IBAction func drinkWater(_ sender: UIButton) {

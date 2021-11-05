@@ -19,8 +19,16 @@ class ProfileViewController: UIViewController {
     }
     
     private func setNavigationBar() {
+        let barAppearance = UINavigationBarAppearance()
+
+        barAppearance.backgroundColor = UIColor(red: 79/255, green: 158/255, blue: 127/255, alpha: 1.0)
+        self.navigationItem.standardAppearance = barAppearance
+        self.navigationItem.scrollEdgeAppearance = barAppearance
+
         self.title = "물 마시기"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveProfile))
+        self.navigationController?.navigationBar.tintColor = .white
+        self.view.backgroundColor = UIColor(red: 156/255, green: 203/255, blue: 184/255, alpha: 1.0)
     }
 
 
