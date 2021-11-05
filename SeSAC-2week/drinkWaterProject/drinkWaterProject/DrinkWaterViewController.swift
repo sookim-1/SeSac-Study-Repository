@@ -102,6 +102,7 @@ class DrinkWaterViewController: UIViewController {
         totalWaterAmountLabel.text = "\(String(totalWaterAmount))ml"
         
         refreshGoalWaterAmount(totalWaterAmount, recommendWaterAmount)
+        goalWaterAmountLabel.textColor = .white
     }
     
     private func refreshGoalWaterAmount(_ totalWaterAmount: Int, _ recommendWaterAmount: Double?) {
@@ -112,6 +113,7 @@ class DrinkWaterViewController: UIViewController {
 
         if goalWaterAmount > 100 {
             goalWaterAmount = 100
+            goalWaterAmountLabel.textColor = .red
         }
         
         changeCharacterImage(currentGoalWaterAmount: goalWaterAmount)
