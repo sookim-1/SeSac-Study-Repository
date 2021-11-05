@@ -12,6 +12,7 @@ class DrinkWaterViewController: UIViewController {
     @IBOutlet var totalWaterAmountLabel: UILabel!
     @IBOutlet var recommendWaterAmountLabel: UILabel!
     @IBOutlet var goalWaterAmountLabel: UILabel!
+    @IBOutlet var characterImageView: UIImageView!
     
     var totalWaterAmount: Int = UserDefaults.standard.integer(forKey: "totalWaterAmount")
     var recommendWaterAmount: Double?
@@ -70,7 +71,37 @@ class DrinkWaterViewController: UIViewController {
         if goalWaterAmount > 100 {
             goalWaterAmount = 100
         }
+        
+        changeCharacterImage(currentGoalWaterAmount: goalWaterAmount)
         goalWaterAmountLabel.text = "목표의 \(goalWaterAmount)%"
     }
+    
+    private func changeCharacterImage(currentGoalWaterAmount: Int) {
+        var imageNamed: String = "1-1"
+
+        switch currentGoalWaterAmount {
+        case 11..<22 :
+            imageNamed = "1-2"
+        case 22..<33 :
+            imageNamed = "1-3"
+        case 33..<44 :
+            imageNamed = "1-4"
+        case 44..<55 :
+            imageNamed = "1-5"
+        case 55..<66 :
+            imageNamed = "1-6"
+        case 66..<77 :
+            imageNamed = "1-7"
+        case 77..<88 :
+            imageNamed = "1-8"
+        case 88...100 :
+            imageNamed = "1-9"
+        default:
+            imageNamed = "1-1"
+        }
+
+        characterImageView.image = UIImage(named: imageNamed)
+    }
+
 }
 
