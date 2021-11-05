@@ -7,10 +7,13 @@
 
 import Foundation
 
-struct ProfileModel {
+struct ProfileModel: Codable {
 
-    let nickname: String
-    let height: Double
-    let weight: Double
+    let nickname: String!
+    let height: Double!
+    let weight: Double!
 
+    func recommendWaterAmount() -> Double {
+        return (height + weight) / 100
+    }
 }
