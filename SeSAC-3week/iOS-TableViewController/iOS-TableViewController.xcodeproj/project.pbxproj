@@ -13,6 +13,7 @@
 		76EFBF982737FA9700BE0CFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76EFBF962737FA9700BE0CFB /* Main.storyboard */; };
 		76EFBF9A2737FA9900BE0CFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76EFBF992737FA9900BE0CFB /* Assets.xcassets */; };
 		76EFBF9D2737FA9900BE0CFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76EFBF9B2737FA9900BE0CFB /* LaunchScreen.storyboard */; };
+		76EFBFA527384D3600BE0CFB /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EFBFA427384D3600BE0CFB /* SettingTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		76EFBF992737FA9900BE0CFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76EFBF9C2737FA9900BE0CFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76EFBF9E2737FA9900BE0CFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76EFBFA427384D3600BE0CFB /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				76EFBF902737FA9700BE0CFB /* AppDelegate.swift */,
+				76EFBFA427384D3600BE0CFB /* SettingTableViewController.swift */,
 				76EFBF922737FA9700BE0CFB /* SceneDelegate.swift */,
 				76EFBF942737FA9700BE0CFB /* TableViewController.swift */,
 				76EFBF962737FA9700BE0CFB /* Main.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76EFBFA527384D3600BE0CFB /* SettingTableViewController.swift in Sources */,
 				76EFBF952737FA9700BE0CFB /* TableViewController.swift in Sources */,
 				76EFBF912737FA9700BE0CFB /* AppDelegate.swift in Sources */,
 				76EFBF932737FA9700BE0CFB /* SceneDelegate.swift in Sources */,
