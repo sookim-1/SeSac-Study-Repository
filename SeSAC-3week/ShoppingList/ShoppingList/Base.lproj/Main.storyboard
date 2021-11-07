@@ -30,6 +30,9 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="추가"/>
+                                    <connections>
+                                        <action selector="addShoppingList:" destination="dQT-gD-wpF" eventType="touchUpInside" id="ErV-PV-jWc"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -80,6 +83,9 @@
                             <outlet property="delegate" destination="dQT-gD-wpF" id="wjR-T5-Ezq"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="buyTextField" destination="nWV-yl-RqL" id="7bK-Ry-qhI"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zMq-9G-WC5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

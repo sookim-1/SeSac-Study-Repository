@@ -8,7 +8,9 @@
 import UIKit
 
 class ViewController: UITableViewController {
-    let shoppingList: [String] = ["그립톡 구매하기", "사이다 구매", "아이패드 케이스 최저가 알아보기", "양말"]
+    @IBOutlet weak var buyTextField: UITextField!
+    
+    var shoppingList: [String] = ["그립톡 구매하기", "사이다 구매", "아이패드 케이스 최저가 알아보기", "양말"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,5 +29,9 @@ class ViewController: UITableViewController {
         return cell
     }
     
+    @IBAction func addShoppingList(_ sender: UIButton) {
+        shoppingList.append(buyTextField.text!)
+        tableView.reloadData()
+    }
 }
 
