@@ -29,6 +29,13 @@ class ViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            shoppingList.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+    }
+    
     @IBAction func addShoppingList(_ sender: UIButton) {
         shoppingList.append(buyTextField.text!)
         tableView.reloadData()
