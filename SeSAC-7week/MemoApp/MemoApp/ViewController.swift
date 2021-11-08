@@ -14,6 +14,15 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func presentViewController(_ sender: UIButton) {
+        let popUpStoryboard = UIStoryboard(name: "PopUp", bundle: nil)
+        let popUpViewController = popUpStoryboard.instantiateViewController(withIdentifier: "PopUpViewController")
+        
+        popUpViewController.modalTransitionStyle = .crossDissolve
+        popUpViewController.modalPresentationStyle = .overFullScreen
+        
+        self.present(popUpViewController, animated: true)
+    }
+    
 }
 
