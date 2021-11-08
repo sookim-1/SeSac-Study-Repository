@@ -11,10 +11,19 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let firstLaunch = FirstLaunch(userDefaults: .standard, key: "firstLaunchKey")
+        if firstLaunch.isFirstLaunch {
+            presentPopUpViewController()
+        }
     }
 
-    @IBAction func presentViewController(_ sender: UIButton) {
+    func presentPopUpViewController() {
         let popUpStoryboard = UIStoryboard(name: "PopUp", bundle: nil)
         let popUpViewController = popUpStoryboard.instantiateViewController(withIdentifier: "PopUpViewController")
         
