@@ -12,6 +12,8 @@ class MemoListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "메모갯수"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -33,5 +35,23 @@ class MemoListViewController: UITableViewController {
         self.present(popUpViewController, animated: true)
     }
     
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return section == 0 ? "고정된 메모" : "메모"
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MemoListCell", for: indexPath) as? MemoListCell else { return UITableViewCell() }
+        cell.titleLabel.text = "값 없음"
+        
+        return cell
+    }
 }
 
