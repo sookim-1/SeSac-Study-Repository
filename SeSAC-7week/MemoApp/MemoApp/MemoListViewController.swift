@@ -86,6 +86,14 @@ class MemoListViewController: UITableViewController {
         
         return cell
     }
+    
+    @IBAction func presentEditViewController(_ sender: UIBarButtonItem) {
+        let editStoryboard = UIStoryboard(name: "Edit", bundle: nil)
+        let editViewController = editStoryboard.instantiateViewController(withIdentifier: "EditViewController")
+        
+        self.navigationController?.pushViewController(editViewController, animated: true)
+    }
+    
 }
 
 extension MemoListViewController: UISearchResultsUpdating {
