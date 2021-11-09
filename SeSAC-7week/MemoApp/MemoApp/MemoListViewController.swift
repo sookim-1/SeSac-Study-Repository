@@ -73,6 +73,18 @@ extension MemoListViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let editStoryboard = UIStoryboard(name: "Edit", bundle: nil)
+        guard let editViewController = editStoryboard.instantiateViewController(withIdentifier: "EditViewController") as? EditViewController else { return }
+        let memo: Memo
+        isFiltering() ? (memo = filteredMemos[indexPath.row]) : (memo = memos[indexPath.row])
+        editViewController.titleText = memo.title
+        editViewController.bodyText = memo.body
+        editViewController.writeDateText = memo.writeDate
+        
+        self.navigationController?.pushViewController(editViewController, animated: true)
+    }
 }
 
 //MARK: - 검색기능 코드
