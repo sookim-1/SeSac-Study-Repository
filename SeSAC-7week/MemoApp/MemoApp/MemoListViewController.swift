@@ -8,7 +8,8 @@
 import UIKit
 
 class MemoListViewController: UITableViewController {
-
+    var memos = [Memo]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
