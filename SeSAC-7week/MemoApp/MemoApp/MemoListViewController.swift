@@ -18,6 +18,13 @@ class MemoListViewController: UITableViewController {
         title = "메모갯수"
         navigationController?.navigationBar.prefersLargeTitles = true
         configureSearchController()
+        memos = [
+                    Memo(title: "1", body: "a", writeDate: "q"),
+                    Memo(title: "2", body: "b", writeDate: "q"),
+                    Memo(title: "3", body: "c", writeDate: "q"),
+                    Memo(title: "4", body: "d", writeDate: "q"),
+                    Memo(title: "5", body: "e", writeDate: "q")
+                ]
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -85,6 +92,16 @@ extension MemoListViewController {
         
         self.navigationController?.pushViewController(editViewController, animated: true)
     }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: "삭제") { (action, view, completionHandler ) in
+            self.memos.remove(at: indexPath.row)
+            self.tableView.reloadData()
+        }
+
+        return UISwipeActionsConfiguration(actions: [action])
+    }
+    
 }
 
 //MARK: - 검색기능 코드
