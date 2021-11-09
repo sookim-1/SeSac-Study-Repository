@@ -9,6 +9,7 @@ import UIKit
 
 class MemoListViewController: UITableViewController {
     var memos = [Memo]()
+    var fixMemos = [Memo]()
     var filteredMemos = [Memo]()
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -66,14 +67,23 @@ extension MemoListViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return fixMemos.count
+        }
         return isFiltering() ? filteredMemos.count : memos.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MemoListCell", for: indexPath) as? MemoListCell else { return UITableViewCell() }
+
         let memo: Memo
-        isFiltering() ? (memo = filteredMemos[indexPath.row]) : (memo = memos[indexPath.row])
         
+        if indexPath.section == 0 {
+            memo = fixMemos[indexPath.row]
+        }
+        else {
+            isFiltering() ? (memo = filteredMemos[indexPath.row]) : (memo = memos[indexPath.row])
+        }
         cell.titleLabel.text = memo.title
         cell.bodyLabel.text = memo.body
         cell.dateLabel.text = memo.writeDate
@@ -85,7 +95,12 @@ extension MemoListViewController {
         let editStoryboard = UIStoryboard(name: "Edit", bundle: nil)
         guard let editViewController = editStoryboard.instantiateViewController(withIdentifier: "EditViewController") as? EditViewController else { return }
         let memo: Memo
-        isFiltering() ? (memo = filteredMemos[indexPath.row]) : (memo = memos[indexPath.row])
+        if indexPath.section == 0 {
+            memo = fixMemos[indexPath.row]
+        }
+        else {
+            isFiltering() ? (memo = filteredMemos[indexPath.row]) : (memo = memos[indexPath.row])
+        }
         editViewController.titleText = memo.title
         editViewController.bodyText = memo.body
         editViewController.writeDateText = memo.writeDate
@@ -116,6 +131,25 @@ extension MemoListViewController {
 
         return UISwipeActionsConfiguration(actions: [action])
     }
+    
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .normal, title: "고정") { (action, view, completionHandler ) in
+            
+            if indexPath.section == 0 {
+                self.memos.append(self.fixMemos[indexPath.row])
+                self.fixMemos.remove(at: indexPath.row)
+            }
+            else {
+                self.fixMemos.append(self.memos[indexPath.row])
+                self.memos.remove(at: indexPath.row)
+            }
+            tableView.reloadData()
+            completionHandler(true)
+        }
+
+        return UISwipeActionsConfiguration(actions: [action])
+    }
+    
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
