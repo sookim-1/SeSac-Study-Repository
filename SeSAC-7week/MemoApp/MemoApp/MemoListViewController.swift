@@ -9,12 +9,15 @@ import UIKit
 
 class MemoListViewController: UITableViewController {
     var memos = [Memo]()
+    var filteredMemos = [Memo]()
+    let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "메모갯수"
         navigationController?.navigationBar.prefersLargeTitles = true
+        configureSearchController()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -25,7 +28,31 @@ class MemoListViewController: UITableViewController {
             presentPopUpViewController()
         }
     }
+    
+    func configureSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "검색"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+    }
+    
+    func searchBarIsEmpty() -> Bool {
+      return searchController.searchBar.text?.isEmpty ?? true
+    }
+      
+    func filterContentForSearchText(_ searchText: String) {
+      filteredMemos = memos.filter({( memo : Memo) -> Bool in
+        return memo.title.lowercased().contains(searchText.lowercased())
+      })
 
+      tableView.reloadData()
+    }
+    
+    func isFiltering() -> Bool {
+      return searchController.isActive && !searchBarIsEmpty()
+    }
+    
     func presentPopUpViewController() {
         let popUpStoryboard = UIStoryboard(name: "PopUp", bundle: nil)
         let popUpViewController = popUpStoryboard.instantiateViewController(withIdentifier: "PopUpViewController")
@@ -45,14 +72,24 @@ class MemoListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return isFiltering() ? filteredMemos.count : memos.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MemoListCell", for: indexPath) as? MemoListCell else { return UITableViewCell() }
-        cell.titleLabel.text = "값 없음"
+        let memo: Memo
+        isFiltering() ? (memo = filteredMemos[indexPath.row]) : (memo = memos[indexPath.row])
+        
+        cell.titleLabel.text = memo.title
+        cell.bodyLabel.text = memo.body
+        cell.dateLabel.text = memo.writeDate
         
         return cell
     }
 }
 
+extension MemoListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+}
