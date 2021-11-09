@@ -95,11 +95,30 @@ extension MemoListViewController {
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .destructive, title: "삭제") { (action, view, completionHandler ) in
-            self.memos.remove(at: indexPath.row)
-            self.tableView.reloadData()
+            let defaultAction = UIAlertAction(title: "삭제",
+                                              style: .destructive) { (action) in
+                self.memos.remove(at: indexPath.row)
+                self.tableView.reloadData()
+            }
+            let cancelAction = UIAlertAction(title: "취소",
+                                             style: .cancel) { (action) in
+            }
+
+            let alert = UIAlertController(title: "진짜요?",
+                  message: "정말로 삭제하시겠어요?",
+                  preferredStyle: .alert)
+            alert.addAction(defaultAction)
+            alert.addAction(cancelAction)
+
+            self.present(alert, animated: true, completion: nil)
+            completionHandler(true)
         }
 
         return UISwipeActionsConfiguration(actions: [action])
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
     }
     
 }
