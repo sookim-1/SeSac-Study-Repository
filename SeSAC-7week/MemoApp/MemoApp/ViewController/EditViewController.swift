@@ -52,7 +52,7 @@ class EditViewController: UIViewController {
         }
     }
     
-    func editModify(memo: Memo) {
+    private func editModify(memo: Memo) {
         if let indexPathRow = indexPathRow {
             if indexPathRow.section == 0 {
                 Memo.fixMemoList[indexPathRow.row] = memo

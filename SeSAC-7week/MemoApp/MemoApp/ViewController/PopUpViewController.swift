@@ -25,13 +25,13 @@ class PopUpViewController: UIViewController {
         configureButton()
     }
     
-    func configureContainerView() {
+    private func configureContainerView() {
         containerView.backgroundColor = .systemGray4
         containerView.layer.cornerRadius = 16
         containerView.layer.borderWidth = 2
     }
     
-    func configureLabel(label: UILabel, text: String) {
+    private func configureLabel(label: UILabel, text: String) {
         label.text = text
         label.numberOfLines = 2
         label.textAlignment = .left
@@ -41,7 +41,7 @@ class PopUpViewController: UIViewController {
         label.minimumScaleFactor = 0.9
     }
     
-    func configureButton() {
+    private func configureButton() {
         continueButton.setTitle("확인", for: .normal)
         continueButton.backgroundColor = .systemOrange
         continueButton.layer.cornerRadius = 10

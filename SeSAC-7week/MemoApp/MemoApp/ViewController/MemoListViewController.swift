@@ -8,8 +8,8 @@
 import UIKit
 
 class MemoListViewController: UITableViewController {
-    var filteredMemos = [Memo]()
-    let searchController = UISearchController(searchResultsController: nil)
+    private var filteredMemos = [Memo]()
+    private let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,13 +50,13 @@ class MemoListViewController: UITableViewController {
         }
     }
     
-    func setNavigationBar() {
+    private func setNavigationBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = .systemOrange
         navigationController?.navigationBar.backgroundColor = .darkGray
     }
     
-    func countMemo() {
+    private func countMemo() {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         var memoCount: Int
@@ -65,7 +65,7 @@ class MemoListViewController: UITableViewController {
         title = "\(result)개의 메모"
     }
     
-    func presentPopUpViewController(mainTitle: String, subTitle: String) {
+    private func presentPopUpViewController(mainTitle: String, subTitle: String) {
         let popUpStoryboard = UIStoryboard(name: "PopUp", bundle: nil)
         guard let popUpViewController = popUpStoryboard.instantiateViewController(withIdentifier: "PopUpViewController") as? PopUpViewController else { return }
         
@@ -227,7 +227,7 @@ extension MemoListViewController {
         return 40
     }
     
-    func getDateFormmater(writeDate: Date) -> String {
+    private func getDateFormmater(writeDate: Date) -> String {
         let dateFormatter = DateFormatter()
         let now = writeDate
         dateFormatter.locale = Locale(identifier: "ko_KR")
@@ -246,7 +246,7 @@ extension MemoListViewController {
 
 //MARK: - 검색기능 코드
 extension MemoListViewController: UISearchResultsUpdating {
-    func configureSearchController() {
+    private func configureSearchController() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "검색"
@@ -254,11 +254,11 @@ extension MemoListViewController: UISearchResultsUpdating {
         definesPresentationContext = true
     }
     
-    func searchBarIsEmpty() -> Bool {
+    private func searchBarIsEmpty() -> Bool {
       return searchController.searchBar.text?.isEmpty ?? true
     }
       
-    func filterContentForSearchText(_ searchText: String) {
+    private func filterContentForSearchText(_ searchText: String) {
       filteredMemos = Memo.memoList.filter({( memo : Memo) -> Bool in
           if memo.title.lowercased().contains(searchText.lowercased()) || memo.body.lowercased().contains(searchText.lowercased()) {
               return true
@@ -271,12 +271,11 @@ extension MemoListViewController: UISearchResultsUpdating {
       tableView.reloadData()
     }
     
-    func isFiltering() -> Bool {
+    private func isFiltering() -> Bool {
       return searchController.isActive && !searchBarIsEmpty()
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-
         filterContentForSearchText(searchController.searchBar.text!)
     }
 }
