@@ -36,7 +36,7 @@ class MemoListViewController: UITableViewController {
         
         let firstLaunch = FirstLaunch(userDefaults: .standard, key: "firstLaunchKey")
         if firstLaunch.isFirstLaunch {
-            presentPopUpViewController()
+            presentPopUpViewController(mainTitle: "처음 오셨군요!\n환영합니다 :)", subTitle: "당신만의 메모를 작성하고 관리해보세요!")
         }
     }
     
@@ -55,12 +55,14 @@ class MemoListViewController: UITableViewController {
         title = "\(result)개의 메모"
     }
     
-    func presentPopUpViewController() {
+    func presentPopUpViewController(mainTitle: String, subTitle: String) {
         let popUpStoryboard = UIStoryboard(name: "PopUp", bundle: nil)
-        let popUpViewController = popUpStoryboard.instantiateViewController(withIdentifier: "PopUpViewController")
+        guard let popUpViewController = popUpStoryboard.instantiateViewController(withIdentifier: "PopUpViewController") as? PopUpViewController else { return }
         
         popUpViewController.modalTransitionStyle = .crossDissolve
         popUpViewController.modalPresentationStyle = .overFullScreen
+        popUpViewController.mainTitle = mainTitle
+        popUpViewController.subTitle = subTitle
         
         self.present(popUpViewController, animated: true)
     }
@@ -168,8 +170,13 @@ extension MemoListViewController {
                 self.fixMemos.remove(at: indexPath.row)
             }
             else {
-                self.fixMemos.append(Memo.memoList[indexPath.row])
-                Memo.memoList.remove(at: indexPath.row)
+                if self.fixMemos.count >= 5 {
+                    self.presentPopUpViewController(mainTitle: "최대 고정갯수는 5개입니다", subTitle: "확인해주세요!")
+                }
+                else {
+                    self.fixMemos.append(Memo.memoList[indexPath.row])
+                    Memo.memoList.remove(at: indexPath.row)
+                }
             }
             tableView.reloadData()
             completionHandler(true)

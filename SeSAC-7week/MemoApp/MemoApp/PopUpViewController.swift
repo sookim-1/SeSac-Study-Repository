@@ -12,14 +12,16 @@ class PopUpViewController: UIViewController {
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var continueButton: UIButton!
+    var mainTitle: String?
+    var subTitle: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75)
         configureContainerView()
-        configureLabel(label: welcomeLabel, text: "처음 오셨군요!\n환영합니다 :)")
-        configureLabel(label: descriptionLabel, text: "당신만의 메모를 작성하고 관리해보세요!")
+        configureLabel(label: welcomeLabel, text: mainTitle!)
+        configureLabel(label: descriptionLabel, text: subTitle!)
         configureButton()
     }
     
