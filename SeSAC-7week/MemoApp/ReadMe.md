@@ -5,12 +5,14 @@
 <img src="https://user-images.githubusercontent.com/55218398/141443493-f53a239e-da17-4c01-a9aa-f11d888520fa.png" width="200" height="400"/>
 
 
-- 네비게이션 바 메모 갯수 1000단위마다 콤마 구현
+- 네비게이션 바 메모 갯수 1000단위마다 콤마 구현, 날짜 포맷 구현
+- 키보드 메모 작성시에만 띄우기
+- 메모작성 시 공백인 경우 메모 저장하지 않기
 - 메모 고정 기능, 삭제 기능
 <img src="https://user-images.githubusercontent.com/55218398/141443933-3242c1ff-3380-4d7e-a223-509bf94c9cf1.png" width="200" height="400"/>
 <img src="https://user-images.githubusercontent.com/55218398/141443872-a510b098-eef6-4bb4-a321-a0f19b0b784f.png" width="200" height="400"/>
 
-- 5개 이상시 경고창
+- 고정된 메모 5개 이상시 경고창
 <img src="https://user-images.githubusercontent.com/55218398/141443826-b4030310-0c8b-4139-ac95-993ce1367203.png" width="200" height="400"/>
 
 - 테이블뷰 날짜 최신순으로 정렬
@@ -22,7 +24,13 @@
 - 공유기능 구현
 
 <img src="https://user-images.githubusercontent.com/55218398/141444442-b6523249-aa51-4689-bfd7-619d01ee9d50.png" width="200" height="400"/>
-# 트러블 슈팅 기록
+
+### 미해결 기능
+- 실시간 검색 텍스트컬러변경
+- 스크롤 시 키보드 내려가기
+- 메모 고정 삭제 검색화면에서 구현하기
+
+## 트러블 슈팅 기록
 
 ### 모달뷰를 ViewDidLoad에서 띄우면 나는 오류
 
