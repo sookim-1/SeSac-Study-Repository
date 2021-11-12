@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Memo {
+struct Memo: Codable {
     let title: String
     let body: String
     let writeDate: Date

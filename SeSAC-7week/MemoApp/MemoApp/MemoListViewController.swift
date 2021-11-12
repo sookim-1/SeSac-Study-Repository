@@ -20,7 +20,8 @@ class MemoListViewController: UITableViewController {
 
         configureSearchController()
 
-
+        guard let data = UserDefaults.standard.value(forKey: "memos") as? Data else { return }
+        Memo.memoList = try! PropertyListDecoder().decode([Memo].self, from: data)
         memos.sorted { $0.title < $1.title }
     }
     
@@ -29,6 +30,12 @@ class MemoListViewController: UITableViewController {
         
         countMemo()
         tableView.reloadData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(Memo.memoList), forKey: "memos")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -246,7 +253,12 @@ extension MemoListViewController: UISearchResultsUpdating {
       
     func filterContentForSearchText(_ searchText: String) {
       filteredMemos = Memo.memoList.filter({( memo : Memo) -> Bool in
-        return memo.title.lowercased().contains(searchText.lowercased())
+          if memo.title.lowercased().contains(searchText.lowercased()) || memo.body.lowercased().contains(searchText.lowercased()) {
+              return true
+          }
+          else {
+              return false
+          }
       })
 
       tableView.reloadData()
