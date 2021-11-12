@@ -134,21 +134,19 @@ extension MemoListViewController {
         guard let editViewController = editStoryboard.instantiateViewController(withIdentifier: "EditViewController") as? EditViewController else { return }
         let memo: Memo
         
-        if indexPath.section == 0 {
-            memo = Memo.fixMemoList[indexPath.row]
-        }
-        else {
-            if isFiltering() {
-                memo = filteredMemos[indexPath.row]
+        if isFiltering() {
+            memo = filteredMemos[indexPath.row]
 
-                let backBarButtonItem = UIBarButtonItem(title: "검색", style: .plain, target: self, action: nil)
-                self.navigationItem.backBarButtonItem = backBarButtonItem
-            } else {
-                memo = Memo.memoList[indexPath.row]
-                let backBarButtonItem = UIBarButtonItem(title: "메모", style: .plain, target: self, action: nil)
-                self.navigationItem.backBarButtonItem = backBarButtonItem
-            }
+            let backBarButtonItem = UIBarButtonItem(title: "검색", style: .plain, target: self, action: nil)
+            self.navigationItem.backBarButtonItem = backBarButtonItem
+        } else {
+            indexPath.section == 0 ? (memo = Memo.fixMemoList[indexPath.row]) : (memo = Memo.memoList[indexPath.row])
         }
+        
+        let backBarButtonItem = UIBarButtonItem(title: "메모", style: .plain, target: self, action: nil)
+        self.navigationItem.backBarButtonItem = backBarButtonItem
+        
+        
         editViewController.titleText = "\(memo.title)\n\n\(memo.body)"
         editViewController.indexPathRow = indexPath
         
