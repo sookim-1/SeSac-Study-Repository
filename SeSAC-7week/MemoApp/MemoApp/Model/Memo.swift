@@ -13,4 +13,5 @@ struct Memo: Codable {
     let writeDate: Date
     
     static var memoList: [Memo] = []
+    static var fixMemoList: [Memo] = []
 }

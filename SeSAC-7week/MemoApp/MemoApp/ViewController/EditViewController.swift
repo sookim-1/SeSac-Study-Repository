@@ -11,7 +11,7 @@ class EditViewController: UIViewController {
 
     @IBOutlet weak var memoTextView: UITextView!
     var titleText: String?
-    var memos: [Memo] = []
+    var indexPathRow: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,13 +35,25 @@ class EditViewController: UIViewController {
                 memoText[1] += memoText[i]
             }
             let memo = Memo(title: memoText[0], body: memoText[1], writeDate: Date())
-            Memo.memoList.append(memo)
+            editModify(memo: memo)
         }
         else {
             let memo = Memo(title: memoTextView.text, body: "", writeDate: Date())
-            Memo.memoList.append(memo)
+            editModify(memo: memo)
         }
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func editModify(memo: Memo) {
+        if let indexPathRow = indexPathRow {
+            if indexPathRow.section == 0 {
+                Memo.fixMemoList[indexPathRow.row] = memo
+            } else {
+                Memo.memoList[indexPathRow.row] = memo
+            }
+        } else {
+            Memo.memoList.append(memo)
+        }
     }
     
     @objc func shareMemo() {
@@ -50,8 +62,8 @@ class EditViewController: UIViewController {
     }
     
     private func detailActionSheet(_ sender: UIBarButtonItem) {
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        let shareAction = UIAlertAction(title: "Share..", style: .default) { (action) in
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        let shareAction = UIAlertAction(title: "공유하기", style: .default) { (action) in
             self.presentShareSheet(sender)
         }
              
