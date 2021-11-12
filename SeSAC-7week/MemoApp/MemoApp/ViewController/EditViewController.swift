@@ -24,24 +24,32 @@ class EditViewController: UIViewController {
     }
 
     override func becomeFirstResponder() -> Bool {
+        if indexPathRow != nil {
+            return false
+        }
         return memoTextView.becomeFirstResponder()
     }
     
     @objc func editMemo() {
-        if memoTextView.text.contains("\n") {
-            var memoText = memoTextView.text.components(separatedBy: "\n")
-            
-            for i in 1..<memoText.count {
-                memoText[1] += memoText[i]
-            }
-            let memo = Memo(title: memoText[0], body: memoText[1], writeDate: Date())
-            editModify(memo: memo)
+        if memoTextView.text.trimmingCharacters(in: .whitespaces) == "" {
+            self.navigationController?.popViewController(animated: true)
         }
         else {
-            let memo = Memo(title: memoTextView.text, body: "", writeDate: Date())
-            editModify(memo: memo)
+            if memoTextView.text.contains("\n") {
+                var memoText = memoTextView.text.components(separatedBy: "\n")
+                
+                for i in 1..<memoText.count {
+                    memoText[1] += memoText[i]
+                }
+                let memo = Memo(title: memoText[0], body: memoText[1], writeDate: Date())
+                editModify(memo: memo)
+            }
+            else {
+                let memo = Memo(title: memoTextView.text, body: "", writeDate: Date())
+                editModify(memo: memo)
+            }
+            self.navigationController?.popViewController(animated: true)
         }
-        self.navigationController?.popViewController(animated: true)
     }
     
     func editModify(memo: Memo) {
