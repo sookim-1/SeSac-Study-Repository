@@ -22,13 +22,17 @@ class MemoListViewController: UITableViewController {
 
         guard let data = UserDefaults.standard.value(forKey: "memos") as? Data else { return }
         Memo.memoList = try! PropertyListDecoder().decode([Memo].self, from: data)
-        memos.sorted { $0.title < $1.title }
+        guard let fixData = UserDefaults.standard.value(forKey: "fixmemos") as? Data else { return }
+        fixMemos = try! PropertyListDecoder().decode([Memo].self, from: fixData)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         countMemo()
+        Memo.memoList = Memo.memoList.sorted { $0.writeDate > $1.writeDate }
+        fixMemos = fixMemos.sorted { $0.writeDate > $1.writeDate }
         tableView.reloadData()
     }
     
@@ -36,6 +40,7 @@ class MemoListViewController: UITableViewController {
         super.viewWillDisappear(animated)
         
         UserDefaults.standard.set(try? PropertyListEncoder().encode(Memo.memoList), forKey: "memos")
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(fixMemos), forKey: "fixmemos")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -185,6 +190,9 @@ extension MemoListViewController {
                     Memo.memoList.remove(at: indexPath.row)
                 }
             }
+            
+            Memo.memoList = Memo.memoList.sorted { $0.writeDate > $1.writeDate }
+            self.fixMemos = self.fixMemos.sorted { $0.writeDate > $1.writeDate }
             tableView.reloadData()
             completionHandler(true)
         }
@@ -269,6 +277,7 @@ extension MemoListViewController: UISearchResultsUpdating {
     }
     
     func updateSearchResults(for searchController: UISearchController) {
+
         filterContentForSearchText(searchController.searchBar.text!)
     }
 }
