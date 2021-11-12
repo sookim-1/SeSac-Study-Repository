@@ -10,7 +10,7 @@ import UIKit
 class MemoListViewController: UITableViewController {
     private var filteredMemos = [Memo]()
     private let searchController = UISearchController(searchResultsController: nil)
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -90,31 +90,38 @@ class MemoListViewController: UITableViewController {
 //MARK: - 테이블뷰 코드
 extension MemoListViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return section == 0 ? "고정된 메모" : "메모"
+        if isFiltering() {
+            return "\(filteredMemos.count)개 찾음"
+        }
+        else {
+            return section == 0 ? "고정된 메모" : "메모"
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return isFiltering() ? 1 : 2
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return Memo.fixMemoList.count
+        if isFiltering() {
+            return filteredMemos.count
         }
-        return isFiltering() ? filteredMemos.count : Memo.memoList.count
+        else {
+            return section == 0 ? Memo.fixMemoList.count : Memo.memoList.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MemoListCell", for: indexPath) as? MemoListCell else { return UITableViewCell() }
 
         let memo: Memo
-        
-        if indexPath.section == 0 {
-            memo = Memo.fixMemoList[indexPath.row]
+        if isFiltering() {
+            memo = filteredMemos[indexPath.row]
         }
         else {
-            isFiltering() ? (memo = filteredMemos[indexPath.row]) : (memo = Memo.memoList[indexPath.row])
+            indexPath.section == 0 ? (memo = Memo.fixMemoList[indexPath.row]) : (memo = Memo.memoList[indexPath.row])
         }
+        
         cell.titleLabel.text = memo.title
         cell.bodyLabel.text = memo.body
         cell.dateLabel.text = getDateFormmater(writeDate: memo.writeDate)
@@ -214,7 +221,7 @@ extension MemoListViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let myLabel = UILabel()
         myLabel.frame = CGRect(x: 20, y: 8, width: 320, height: 20)
-        myLabel.font = UIFont.boldSystemFont(ofSize: 30)
+        myLabel.font = UIFont.boldSystemFont(ofSize: 20)
         myLabel.text = self.tableView(tableView, titleForHeaderInSection: section)
 
         let headerView = UIView()
@@ -224,7 +231,7 @@ extension MemoListViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
+        return 50
     }
     
     private func getDateFormmater(writeDate: Date) -> String {
@@ -259,15 +266,19 @@ extension MemoListViewController: UISearchResultsUpdating {
     }
       
     private func filterContentForSearchText(_ searchText: String) {
-      filteredMemos = Memo.memoList.filter({( memo : Memo) -> Bool in
+        let tempFilterMemos = Memo.fixMemoList + Memo.memoList
+      filteredMemos = tempFilterMemos.filter({( memo : Memo) -> Bool in
           if memo.title.lowercased().contains(searchText.lowercased()) || memo.body.lowercased().contains(searchText.lowercased()) {
+              
+
+              
               return true
           }
           else {
               return false
           }
       })
-
+    
       tableView.reloadData()
     }
     
