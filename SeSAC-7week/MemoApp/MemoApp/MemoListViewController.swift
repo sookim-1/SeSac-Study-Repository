@@ -148,7 +148,7 @@ extension MemoListViewController {
         let action = UIContextualAction(style: .destructive, title: "삭제") { (action, view, completionHandler ) in
             let defaultAction = UIAlertAction(title: "삭제",
                                               style: .destructive) { (action) in
-                Memo.memoList.remove(at: indexPath.row)
+                indexPath.section == 0 ? self.fixMemos.remove(at: indexPath.row) : Memo.memoList.remove(at: indexPath.row)
                 self.tableView.reloadData()
             }
             let cancelAction = UIAlertAction(title: "취소",
