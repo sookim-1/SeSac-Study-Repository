@@ -16,7 +16,6 @@ class MemoListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "메모갯수"
         navigationController?.navigationBar.prefersLargeTitles = true
         configureSearchController()
         memos = [
@@ -26,6 +25,7 @@ class MemoListViewController: UITableViewController {
                     Memo(title: "4", body: "d", writeDate: "q"),
                     Memo(title: "5", body: "e", writeDate: "q")
                 ]
+        countMemo()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -35,6 +35,15 @@ class MemoListViewController: UITableViewController {
         if firstLaunch.isFirstLaunch {
             presentPopUpViewController()
         }
+    }
+    
+    func countMemo() {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        var memoCount: Int
+        isFiltering() ? (memoCount = filteredMemos.count) : (memoCount = fixMemos.count + memos.count)
+        guard let result = numberFormatter.string(for: memoCount) else { return }
+        title = "\(result)개의 메모"
     }
     
     func presentPopUpViewController() {
