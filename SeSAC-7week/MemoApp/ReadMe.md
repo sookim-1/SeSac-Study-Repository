@@ -1,3 +1,27 @@
+# 앱 예시
+
+## 스크린샷 
+- 팝업화면 구현
+<img src="https://user-images.githubusercontent.com/55218398/141443493-f53a239e-da17-4c01-a9aa-f11d888520fa.png" width="200" height="400"/>
+
+
+- 네비게이션 바 메모 갯수 1000단위마다 콤마 구현
+- 메모 고정 기능, 삭제 기능
+<img src="https://user-images.githubusercontent.com/55218398/141443933-3242c1ff-3380-4d7e-a223-509bf94c9cf1.png" width="200" height="400"/>
+<img src="https://user-images.githubusercontent.com/55218398/141443872-a510b098-eef6-4bb4-a321-a0f19b0b784f.png" width="200" height="400"/>
+
+- 5개 이상시 경고창
+<img src="https://user-images.githubusercontent.com/55218398/141443826-b4030310-0c8b-4139-ac95-993ce1367203.png" width="200" height="400"/>
+
+- 테이블뷰 날짜 최신순으로 정렬
+<img src="https://user-images.githubusercontent.com/55218398/141443858-5a83dfe0-c435-4da5-b141-11a4a18df647.png" width="200" height="400"/>
+
+- 검색기능 구현
+<img src="https://user-images.githubusercontent.com/55218398/141443905-4fba764a-959d-4537-9750-f874e0df8bb5.png" width="200" height="400"/>
+
+- 공유기능 구현
+
+<img src="https://user-images.githubusercontent.com/55218398/141444442-b6523249-aa51-4689-bfd7-619d01ee9d50.png" width="200" height="400"/>
 # 트러블 슈팅 기록
 
 ### 모달뷰를 ViewDidLoad에서 띄우면 나는 오류
