@@ -12,53 +12,69 @@
         <scene sceneID="PrV-Ce-EIG">
             <objects>
                 <tableViewController id="ogR-mg-Idq" customClass="MemoListViewController" customModule="MemoApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="6kk-6C-L91">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="6kk-6C-L91">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="3AD-Zy-sbo">
-                            <rect key="frame" x="0.0" y="222" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="223" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <items>
-                                <barButtonItem title="이동" id="2ln-Bz-zS4">
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="3M4-rP-mZB"/>
+                                <barButtonItem image="square.and.pencil" catalog="system" id="2ln-Bz-zS4">
                                     <connections>
                                         <action selector="presentEditViewController:" destination="ogR-mg-Idq" id="gBK-i9-dhE"/>
                                     </connections>
                                 </barButtonItem>
                             </items>
+                            <color key="tintColor" systemColor="systemOrangeColor"/>
                         </toolbar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemoListCell" rowHeight="155" id="bd8-2R-rUC" customClass="MemoListCell" customModule="MemoApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="155"/>
+                                <rect key="frame" x="20" y="49.5" width="374" height="155"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bd8-2R-rUC" id="zrY-mw-jqw">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="155"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="155"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8n-zy-4L4">
-                                            <rect key="frame" x="40" y="31" width="41.5" height="20.5"/>
+                                            <rect key="frame" x="28" y="21" width="318" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="DMH-Bh-LPb"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unW-Y9-43T">
-                                            <rect key="frame" x="28" y="89" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unW-Y9-43T">
+                                            <rect key="frame" x="28" y="56" width="42" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="agL-Fm-Vko"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oH-fF-rRW">
-                                            <rect key="frame" x="78" y="89" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oH-fF-rRW">
+                                            <rect key="frame" x="304" y="56" width="42" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="dRg-p0-zub"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="h8n-zy-4L4" firstAttribute="top" secondItem="zrY-mw-jqw" secondAttribute="topMargin" constant="20" id="vRk-pV-QZ0"/>
-                                        <constraint firstItem="h8n-zy-4L4" firstAttribute="leading" secondItem="zrY-mw-jqw" secondAttribute="leadingMargin" constant="20" id="zTM-VA-PGo"/>
+                                        <constraint firstItem="9oH-fF-rRW" firstAttribute="bottom" secondItem="unW-Y9-43T" secondAttribute="bottom" id="EzG-h3-q3j"/>
+                                        <constraint firstItem="9oH-fF-rRW" firstAttribute="top" secondItem="unW-Y9-43T" secondAttribute="top" id="G0U-qZ-mS4"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="h8n-zy-4L4" secondAttribute="trailing" constant="8" id="GOk-9N-kXL"/>
+                                        <constraint firstItem="h8n-zy-4L4" firstAttribute="top" secondItem="zrY-mw-jqw" secondAttribute="topMargin" constant="10" id="RXB-0H-qeB"/>
+                                        <constraint firstItem="9oH-fF-rRW" firstAttribute="trailing" secondItem="h8n-zy-4L4" secondAttribute="trailing" id="Vuw-eT-RQn"/>
+                                        <constraint firstItem="h8n-zy-4L4" firstAttribute="leading" secondItem="zrY-mw-jqw" secondAttribute="leadingMargin" constant="8" id="Y9b-G0-rQ1"/>
+                                        <constraint firstItem="9oH-fF-rRW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="unW-Y9-43T" secondAttribute="trailing" constant="10" id="pn9-V3-FFG"/>
+                                        <constraint firstItem="unW-Y9-43T" firstAttribute="top" secondItem="h8n-zy-4L4" secondAttribute="bottom" constant="10" id="rT2-Sc-QJ9"/>
+                                        <constraint firstItem="unW-Y9-43T" firstAttribute="leading" secondItem="h8n-zy-4L4" secondAttribute="leading" id="sxq-v3-hsH"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -99,8 +115,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

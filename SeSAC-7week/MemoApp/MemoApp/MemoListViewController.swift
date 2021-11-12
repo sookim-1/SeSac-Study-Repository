@@ -19,14 +19,18 @@ class MemoListViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = .systemOrange
         configureSearchController()
+        navigationController?.navigationBar.backgroundColor = .darkGray
+        
         memos = [
-                    Memo(title: "1", body: "a", writeDate: Date()),
+                    Memo(title: "6", body: "a", writeDate: Date()),
                     Memo(title: "2", body: "b", writeDate: Date()),
                     Memo(title: "3", body: "c", writeDate: Date()),
                     Memo(title: "4", body: "d", writeDate: Date()),
                     Memo(title: "5", body: "e", writeDate: Date())
                 ]
         countMemo()
+
+        memos.sorted { $0.title < $1.title }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -127,7 +131,7 @@ extension MemoListViewController {
         
         self.navigationController?.pushViewController(editViewController, animated: true)
     }
-    
+
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .destructive, title: "삭제") { (action, view, completionHandler ) in
             let defaultAction = UIAlertAction(title: "삭제",
@@ -148,12 +152,13 @@ extension MemoListViewController {
             self.present(alert, animated: true, completion: nil)
             completionHandler(true)
         }
+        action.image = UIImage(systemName: "trash.fill")
 
         return UISwipeActionsConfiguration(actions: [action])
     }
     
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let action = UIContextualAction(style: .normal, title: "고정") { (action, view, completionHandler ) in
+        let action = UIContextualAction(style: .normal, title: nil) { (action, view, completionHandler ) in
             
             if indexPath.section == 0 {
                 self.memos.append(self.fixMemos[indexPath.row])
@@ -166,13 +171,36 @@ extension MemoListViewController {
             tableView.reloadData()
             completionHandler(true)
         }
-
+        
+        action.backgroundColor = .systemOrange
+        
+        if indexPath.section == 0 {
+            action.image = UIImage(systemName: "pin.slash.fill")
+        } else {
+            action.image = UIImage(systemName: "pin.fill")
+        }
         return UISwipeActionsConfiguration(actions: [action])
     }
     
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 80
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let myLabel = UILabel()
+        myLabel.frame = CGRect(x: 20, y: 8, width: 320, height: 20)
+        myLabel.font = UIFont.boldSystemFont(ofSize: 30)
+        myLabel.text = self.tableView(tableView, titleForHeaderInSection: section)
+
+        let headerView = UIView()
+        headerView.addSubview(myLabel)
+
+        return headerView
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
     }
     
     func getDateFormmater(wrideDate: String) {
