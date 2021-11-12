@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Memo {
-    let title: String
-    let body: String
-    let writeDate: String
+struct Memo: Codable {
+    let title: String!
+    let body: String!
+    let writeDate: Date!
 }

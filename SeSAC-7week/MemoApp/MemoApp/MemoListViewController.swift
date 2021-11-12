@@ -17,13 +17,14 @@ class MemoListViewController: UITableViewController {
         super.viewDidLoad()
         
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = .systemOrange
         configureSearchController()
         memos = [
-                    Memo(title: "1", body: "a", writeDate: "q"),
-                    Memo(title: "2", body: "b", writeDate: "q"),
-                    Memo(title: "3", body: "c", writeDate: "q"),
-                    Memo(title: "4", body: "d", writeDate: "q"),
-                    Memo(title: "5", body: "e", writeDate: "q")
+                    Memo(title: "1", body: "a", writeDate: Date()),
+                    Memo(title: "2", body: "b", writeDate: Date()),
+                    Memo(title: "3", body: "c", writeDate: Date()),
+                    Memo(title: "4", body: "d", writeDate: Date()),
+                    Memo(title: "5", body: "e", writeDate: Date())
                 ]
         countMemo()
     }
@@ -95,7 +96,7 @@ extension MemoListViewController {
         }
         cell.titleLabel.text = memo.title
         cell.bodyLabel.text = memo.body
-        cell.dateLabel.text = memo.writeDate
+        cell.dateLabel.text = "\(memo.writeDate)"
         
         return cell
     }
@@ -104,11 +105,21 @@ extension MemoListViewController {
         let editStoryboard = UIStoryboard(name: "Edit", bundle: nil)
         guard let editViewController = editStoryboard.instantiateViewController(withIdentifier: "EditViewController") as? EditViewController else { return }
         let memo: Memo
+        
         if indexPath.section == 0 {
             memo = fixMemos[indexPath.row]
         }
         else {
-            isFiltering() ? (memo = filteredMemos[indexPath.row]) : (memo = memos[indexPath.row])
+            if isFiltering() {
+                memo = filteredMemos[indexPath.row]
+
+                let backBarButtonItem = UIBarButtonItem(title: "검색", style: .plain, target: self, action: nil)
+                self.navigationItem.backBarButtonItem = backBarButtonItem
+            } else {
+                memo = memos[indexPath.row]
+                let backBarButtonItem = UIBarButtonItem(title: "메모", style: .plain, target: self, action: nil)
+                self.navigationItem.backBarButtonItem = backBarButtonItem
+            }
         }
         editViewController.titleText = memo.title
         editViewController.bodyText = memo.body
