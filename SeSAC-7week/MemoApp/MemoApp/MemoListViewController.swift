@@ -164,6 +164,19 @@ extension MemoListViewController {
         return 150
     }
     
+    func getDateFormmater(wrideDate: String) {
+        let dateFormatter = DateFormatter()
+        let now = Date()
+        
+        switch now {
+        case Date(timeInterval: 86400, since: now):
+            dateFormatter.dateFormat = "a-HH:mm"
+        case Date(timeInterval: 86400, since: now)..<Date(timeInterval: 604800, since: now):
+            dateFormatter.dateFormat = "EEE"
+        default:
+            dateFormatter.dateFormat = "yyyy. MM. dd. a-HH:mm"
+        }
+    }
 }
 
 //MARK: - 검색기능 코드
