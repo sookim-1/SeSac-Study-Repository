@@ -16,21 +16,18 @@ class MemoListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.tintColor = .systemOrange
+        setNavigationBar()
+
         configureSearchController()
-        navigationController?.navigationBar.backgroundColor = .darkGray
-        
-        memos = [
-                    Memo(title: "6", body: "a", writeDate: Date()),
-                    Memo(title: "2", body: "b", writeDate: Date()),
-                    Memo(title: "3", body: "c", writeDate: Date()),
-                    Memo(title: "4", body: "d", writeDate: Date()),
-                    Memo(title: "5", body: "e", writeDate: Date())
-                ]
+        setMemos()
         countMemo()
 
         memos.sorted { $0.title < $1.title }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -40,6 +37,19 @@ class MemoListViewController: UITableViewController {
         if firstLaunch.isFirstLaunch {
             presentPopUpViewController()
         }
+    }
+    
+    func setNavigationBar() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = .systemOrange
+        navigationController?.navigationBar.backgroundColor = .darkGray
+    }
+    
+    func setMemos() {
+        guard let data = UserDefaults.standard.value(forKey: "memos") as? Data else { return }
+        guard let memoModel = try? PropertyListDecoder().decode([Memo].self, from: data) else { return }
+        memos = memoModel
+        tableView.reloadData()
     }
     
     func countMemo() {
@@ -100,7 +110,7 @@ extension MemoListViewController {
         }
         cell.titleLabel.text = memo.title
         cell.bodyLabel.text = memo.body
-        cell.dateLabel.text = "\(memo.writeDate)"
+        cell.dateLabel.text = getDateFormmater(writeDate: memo.writeDate)
         
         return cell
     }
@@ -125,6 +135,7 @@ extension MemoListViewController {
                 self.navigationItem.backBarButtonItem = backBarButtonItem
             }
         }
+        editViewController.memos = memos
         editViewController.titleText = memo.title
         editViewController.bodyText = memo.body
         editViewController.writeDateText = memo.writeDate
@@ -203,18 +214,20 @@ extension MemoListViewController {
         return 40
     }
     
-    func getDateFormmater(wrideDate: String) {
+    func getDateFormmater(writeDate: Date) -> String {
         let dateFormatter = DateFormatter()
-        let now = Date()
-        
+        let now = writeDate
+        dateFormatter.locale = Locale(identifier: "ko_KR")
         switch now {
-        case Date(timeInterval: 86400, since: now):
-            dateFormatter.dateFormat = "a-HH:mm"
+        case ..<Date(timeInterval: 86400, since: now):
+            dateFormatter.dateFormat = "a HH:mm"
         case Date(timeInterval: 86400, since: now)..<Date(timeInterval: 604800, since: now):
             dateFormatter.dateFormat = "EEE"
         default:
-            dateFormatter.dateFormat = "yyyy. MM. dd. a-HH:mm"
+            dateFormatter.dateFormat = "yyyy. MM. dd. a HH:mm"
         }
+        
+        return dateFormatter.string(from: writeDate)
     }
 }
 

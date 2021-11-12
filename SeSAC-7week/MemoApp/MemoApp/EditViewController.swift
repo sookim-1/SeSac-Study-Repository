@@ -36,13 +36,12 @@ class EditViewController: UIViewController {
             memos.append(memo)
             UserDefaults.standard.set(try? PropertyListEncoder().encode(memos), forKey: "memos")
         }
-        
-        let memo = Memo(title: memoTextView.text, body: "", writeDate: Date())
-        memos.append(memo)
-        UserDefaults.standard.set(try? PropertyListEncoder().encode(memos), forKey: "memos")
-        
-        guard let data = UserDefaults.standard.value(forKey: "memos") as? Data else { return }
-        let memoModel = try? PropertyListDecoder().decode([Memo].self, from: data)
+        else {
+            let memo = Memo(title: memoTextView.text, body: "", writeDate: Date())
+            memos.append(memo)
+            UserDefaults.standard.set(try? PropertyListEncoder().encode(memos), forKey: "memos")
+        }
+        self.navigationController?.popViewController(animated: true)
     }
     
     @objc func shareMemo() {
