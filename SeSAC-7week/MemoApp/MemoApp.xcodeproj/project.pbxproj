@@ -51,6 +51,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		76BCDDE7273E45EE009AD733 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				76D6C75D2738F64C008FC3E9 /* MemoListViewController.swift */,
+				76D6C77E273999B2008FC3E9 /* PopUpViewController.swift */,
+				76AFC4A6273AFFA100F897E1 /* EditViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		76BCDDE8273E45FD009AD733 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				76AFC4A0273AF75900F897E1 /* MemoListCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		76BCDDE9273E4604009AD733 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				76D6C7842739B1E5008FC3E9 /* FirstLaunch.swift */,
+				76AFC4A2273AFB8600F897E1 /* Memo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		76BCDDEA273E460C009AD733 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				76D6C75F2738F64C008FC3E9 /* Main.storyboard */,
+				76D6C7642738F64E008FC3E9 /* LaunchScreen.storyboard */,
+				76AFC4A4273AFF8E00F897E1 /* Edit.storyboard */,
+				76D6C77C273999A3008FC3E9 /* PopUp.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		76BCDDEB273E4635009AD733 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				76D6C7592738F64C008FC3E9 /* AppDelegate.swift */,
+				76D6C75B2738F64C008FC3E9 /* SceneDelegate.swift */,
+				76D6C7622738F64E008FC3E9 /* Assets.xcassets */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		76D6C74D2738F64C008FC3E9 = {
 			isa = PBXGroup;
 			children = (
@@ -70,20 +118,12 @@
 		76D6C7582738F64C008FC3E9 /* MemoApp */ = {
 			isa = PBXGroup;
 			children = (
-				76D6C7592738F64C008FC3E9 /* AppDelegate.swift */,
-				76D6C75B2738F64C008FC3E9 /* SceneDelegate.swift */,
-				76D6C75D2738F64C008FC3E9 /* MemoListViewController.swift */,
-				76D6C77E273999B2008FC3E9 /* PopUpViewController.swift */,
-				76D6C75F2738F64C008FC3E9 /* Main.storyboard */,
-				76D6C77C273999A3008FC3E9 /* PopUp.storyboard */,
-				76D6C7622738F64E008FC3E9 /* Assets.xcassets */,
-				76D6C7642738F64E008FC3E9 /* LaunchScreen.storyboard */,
+				76BCDDEB273E4635009AD733 /* Support */,
+				76BCDDEA273E460C009AD733 /* Storyboard */,
+				76BCDDE9273E4604009AD733 /* Model */,
+				76BCDDE8273E45FD009AD733 /* View */,
+				76BCDDE7273E45EE009AD733 /* ViewController */,
 				76D6C7672738F64E008FC3E9 /* Info.plist */,
-				76D6C7842739B1E5008FC3E9 /* FirstLaunch.swift */,
-				76AFC4A0273AF75900F897E1 /* MemoListCell.swift */,
-				76AFC4A2273AFB8600F897E1 /* Memo.swift */,
-				76AFC4A4273AFF8E00F897E1 /* Edit.storyboard */,
-				76AFC4A6273AFFA100F897E1 /* EditViewController.swift */,
 			);
 			path = MemoApp;
 			sourceTree = "<group>";
