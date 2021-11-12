@@ -7,8 +7,10 @@
 
 import Foundation
 
-struct Memo: Codable {
-    let title: String!
-    let body: String!
-    let writeDate: Date!
+struct Memo {
+    let title: String
+    let body: String
+    let writeDate: Date
+    
+    static var memoList: [Memo] = []
 }

@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="3AD-Zy-sbo">
-                            <rect key="frame" x="0.0" y="223" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="222.5" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <items>
                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="3M4-rP-mZB"/>
@@ -56,7 +56,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oH-fF-rRW">
-                                            <rect key="frame" x="304" y="56" width="42" height="25"/>
+                                            <rect key="frame" x="80" y="56" width="42" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="dRg-p0-zub"/>
                                             </constraints>
@@ -70,9 +70,8 @@
                                         <constraint firstItem="9oH-fF-rRW" firstAttribute="top" secondItem="unW-Y9-43T" secondAttribute="top" id="G0U-qZ-mS4"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="h8n-zy-4L4" secondAttribute="trailing" constant="8" id="GOk-9N-kXL"/>
                                         <constraint firstItem="h8n-zy-4L4" firstAttribute="top" secondItem="zrY-mw-jqw" secondAttribute="topMargin" constant="10" id="RXB-0H-qeB"/>
-                                        <constraint firstItem="9oH-fF-rRW" firstAttribute="trailing" secondItem="h8n-zy-4L4" secondAttribute="trailing" id="Vuw-eT-RQn"/>
                                         <constraint firstItem="h8n-zy-4L4" firstAttribute="leading" secondItem="zrY-mw-jqw" secondAttribute="leadingMargin" constant="8" id="Y9b-G0-rQ1"/>
-                                        <constraint firstItem="9oH-fF-rRW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="unW-Y9-43T" secondAttribute="trailing" constant="10" id="pn9-V3-FFG"/>
+                                        <constraint firstItem="9oH-fF-rRW" firstAttribute="leading" secondItem="unW-Y9-43T" secondAttribute="trailing" constant="10" id="pn9-V3-FFG"/>
                                         <constraint firstItem="unW-Y9-43T" firstAttribute="top" secondItem="h8n-zy-4L4" secondAttribute="bottom" constant="10" id="rT2-Sc-QJ9"/>
                                         <constraint firstItem="unW-Y9-43T" firstAttribute="leading" secondItem="h8n-zy-4L4" secondAttribute="leading" id="sxq-v3-hsH"/>
                                     </constraints>

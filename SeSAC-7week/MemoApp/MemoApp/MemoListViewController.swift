@@ -19,8 +19,7 @@ class MemoListViewController: UITableViewController {
         setNavigationBar()
 
         configureSearchController()
-        setMemos()
-        countMemo()
+
 
         memos.sorted { $0.title < $1.title }
     }
@@ -28,6 +27,8 @@ class MemoListViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        countMemo()
+        tableView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -45,18 +46,11 @@ class MemoListViewController: UITableViewController {
         navigationController?.navigationBar.backgroundColor = .darkGray
     }
     
-    func setMemos() {
-        guard let data = UserDefaults.standard.value(forKey: "memos") as? Data else { return }
-        guard let memoModel = try? PropertyListDecoder().decode([Memo].self, from: data) else { return }
-        memos = memoModel
-        tableView.reloadData()
-    }
-    
     func countMemo() {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         var memoCount: Int
-        isFiltering() ? (memoCount = filteredMemos.count) : (memoCount = fixMemos.count + memos.count)
+        isFiltering() ? (memoCount = filteredMemos.count) : (memoCount = fixMemos.count + Memo.memoList.count)
         guard let result = numberFormatter.string(for: memoCount) else { return }
         title = "\(result)개의 메모"
     }
@@ -73,7 +67,8 @@ class MemoListViewController: UITableViewController {
     
     @IBAction func presentEditViewController(_ sender: UIBarButtonItem) {
         let editStoryboard = UIStoryboard(name: "Edit", bundle: nil)
-        let editViewController = editStoryboard.instantiateViewController(withIdentifier: "EditViewController")
+        guard let editViewController = editStoryboard.instantiateViewController(withIdentifier: "EditViewController") as? EditViewController else { return }
+        editViewController.titleText = ""
         
         self.navigationController?.pushViewController(editViewController, animated: true)
     }
@@ -94,7 +89,7 @@ extension MemoListViewController {
         if section == 0 {
             return fixMemos.count
         }
-        return isFiltering() ? filteredMemos.count : memos.count
+        return isFiltering() ? filteredMemos.count : Memo.memoList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -106,7 +101,7 @@ extension MemoListViewController {
             memo = fixMemos[indexPath.row]
         }
         else {
-            isFiltering() ? (memo = filteredMemos[indexPath.row]) : (memo = memos[indexPath.row])
+            isFiltering() ? (memo = filteredMemos[indexPath.row]) : (memo = Memo.memoList[indexPath.row])
         }
         cell.titleLabel.text = memo.title
         cell.bodyLabel.text = memo.body
@@ -130,15 +125,12 @@ extension MemoListViewController {
                 let backBarButtonItem = UIBarButtonItem(title: "검색", style: .plain, target: self, action: nil)
                 self.navigationItem.backBarButtonItem = backBarButtonItem
             } else {
-                memo = memos[indexPath.row]
+                memo = Memo.memoList[indexPath.row]
                 let backBarButtonItem = UIBarButtonItem(title: "메모", style: .plain, target: self, action: nil)
                 self.navigationItem.backBarButtonItem = backBarButtonItem
             }
         }
-        editViewController.memos = memos
-        editViewController.titleText = memo.title
-        editViewController.bodyText = memo.body
-        editViewController.writeDateText = memo.writeDate
+        editViewController.titleText = "\(memo.title)\n\n\(memo.body)"
         
         self.navigationController?.pushViewController(editViewController, animated: true)
     }
@@ -147,7 +139,7 @@ extension MemoListViewController {
         let action = UIContextualAction(style: .destructive, title: "삭제") { (action, view, completionHandler ) in
             let defaultAction = UIAlertAction(title: "삭제",
                                               style: .destructive) { (action) in
-                self.memos.remove(at: indexPath.row)
+                Memo.memoList.remove(at: indexPath.row)
                 self.tableView.reloadData()
             }
             let cancelAction = UIAlertAction(title: "취소",
@@ -172,12 +164,12 @@ extension MemoListViewController {
         let action = UIContextualAction(style: .normal, title: nil) { (action, view, completionHandler ) in
             
             if indexPath.section == 0 {
-                self.memos.append(self.fixMemos[indexPath.row])
+                Memo.memoList.append(self.fixMemos[indexPath.row])
                 self.fixMemos.remove(at: indexPath.row)
             }
             else {
-                self.fixMemos.append(self.memos[indexPath.row])
-                self.memos.remove(at: indexPath.row)
+                self.fixMemos.append(Memo.memoList[indexPath.row])
+                Memo.memoList.remove(at: indexPath.row)
             }
             tableView.reloadData()
             completionHandler(true)
@@ -246,7 +238,7 @@ extension MemoListViewController: UISearchResultsUpdating {
     }
       
     func filterContentForSearchText(_ searchText: String) {
-      filteredMemos = memos.filter({( memo : Memo) -> Bool in
+      filteredMemos = Memo.memoList.filter({( memo : Memo) -> Bool in
         return memo.title.lowercased().contains(searchText.lowercased())
       })
 

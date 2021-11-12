@@ -11,14 +11,12 @@ class EditViewController: UIViewController {
 
     @IBOutlet weak var memoTextView: UITextView!
     var titleText: String?
-    var bodyText: String?
-    var writeDateText: Date?
     var memos: [Memo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        memoTextView.text = "\(titleText) + \(bodyText) + \(writeDateText)"
+        memoTextView.text = "\(titleText!)"
         memoTextView.autocorrectionType = .no
         let editButton = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(editMemo))
         let shareButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(shareMemo))
@@ -32,14 +30,16 @@ class EditViewController: UIViewController {
     @objc func editMemo() {
         if memoTextView.text.contains("\n") {
             var memoText = memoTextView.text.components(separatedBy: "\n")
+            
+            for i in 1..<memoText.count {
+                memoText[1] += memoText[i]
+            }
             let memo = Memo(title: memoText[0], body: memoText[1], writeDate: Date())
-            memos.append(memo)
-            UserDefaults.standard.set(try? PropertyListEncoder().encode(memos), forKey: "memos")
+            Memo.memoList.append(memo)
         }
         else {
             let memo = Memo(title: memoTextView.text, body: "", writeDate: Date())
-            memos.append(memo)
-            UserDefaults.standard.set(try? PropertyListEncoder().encode(memos), forKey: "memos")
+            Memo.memoList.append(memo)
         }
         self.navigationController?.popViewController(animated: true)
     }
