@@ -17,6 +17,7 @@
 		76AAFD602767A01200CE26D9 /* SquareBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AAFD5F2767A01200CE26D9 /* SquareBoxView.swift */; };
 		76AAFD622767BD2200CE26D9 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AAFD612767BD2200CE26D9 /* BannerView.swift */; };
 		76AAFD642767BF2000CE26D9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AAFD632767BF2000CE26D9 /* DetailViewController.swift */; };
+		76AAFD662767C1AB00CE26D9 /* MainActivateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AAFD652767C1AB00CE26D9 /* MainActivateButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		76AAFD5F2767A01200CE26D9 /* SquareBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareBoxView.swift; sourceTree = "<group>"; };
 		76AAFD612767BD2200CE26D9 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		76AAFD632767BF2000CE26D9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		76AAFD652767C1AB00CE26D9 /* MainActivateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainActivateButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				76AAFD5D27679FF100CE26D9 /* SquareBoxView.xib */,
 				76AAFD5F2767A01200CE26D9 /* SquareBoxView.swift */,
 				76AAFD632767BF2000CE26D9 /* DetailViewController.swift */,
+				76AAFD652767C1AB00CE26D9 /* MainActivateButton.swift */,
 			);
 			path = xibPractice;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 				76AAFD642767BF2000CE26D9 /* DetailViewController.swift in Sources */,
 				76AAFD4C27679EDD00CE26D9 /* SceneDelegate.swift in Sources */,
 				76AAFD602767A01200CE26D9 /* SquareBoxView.swift in Sources */,
+				76AAFD662767C1AB00CE26D9 /* MainActivateButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
