@@ -15,6 +15,8 @@
 		76AAFD5627679EE000CE26D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76AAFD5427679EE000CE26D9 /* LaunchScreen.storyboard */; };
 		76AAFD5E27679FF100CE26D9 /* SquareBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76AAFD5D27679FF100CE26D9 /* SquareBoxView.xib */; };
 		76AAFD602767A01200CE26D9 /* SquareBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AAFD5F2767A01200CE26D9 /* SquareBoxView.swift */; };
+		76AAFD622767BD2200CE26D9 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AAFD612767BD2200CE26D9 /* BannerView.swift */; };
+		76AAFD642767BF2000CE26D9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AAFD632767BF2000CE26D9 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		76AAFD5727679EE000CE26D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76AAFD5D27679FF100CE26D9 /* SquareBoxView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SquareBoxView.xib; sourceTree = "<group>"; };
 		76AAFD5F2767A01200CE26D9 /* SquareBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareBoxView.swift; sourceTree = "<group>"; };
+		76AAFD612767BD2200CE26D9 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		76AAFD632767BF2000CE26D9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,12 +67,14 @@
 				76AAFD4927679EDD00CE26D9 /* AppDelegate.swift */,
 				76AAFD4B27679EDD00CE26D9 /* SceneDelegate.swift */,
 				76AAFD4D27679EDD00CE26D9 /* ViewController.swift */,
+				76AAFD612767BD2200CE26D9 /* BannerView.swift */,
 				76AAFD4F27679EDD00CE26D9 /* Main.storyboard */,
 				76AAFD5227679EE000CE26D9 /* Assets.xcassets */,
 				76AAFD5427679EE000CE26D9 /* LaunchScreen.storyboard */,
 				76AAFD5727679EE000CE26D9 /* Info.plist */,
 				76AAFD5D27679FF100CE26D9 /* SquareBoxView.xib */,
 				76AAFD5F2767A01200CE26D9 /* SquareBoxView.swift */,
+				76AAFD632767BF2000CE26D9 /* DetailViewController.swift */,
 			);
 			path = xibPractice;
 			sourceTree = "<group>";
@@ -145,8 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76AAFD622767BD2200CE26D9 /* BannerView.swift in Sources */,
 				76AAFD4E27679EDD00CE26D9 /* ViewController.swift in Sources */,
 				76AAFD4A27679EDD00CE26D9 /* AppDelegate.swift in Sources */,
+				76AAFD642767BF2000CE26D9 /* DetailViewController.swift in Sources */,
 				76AAFD4C27679EDD00CE26D9 /* SceneDelegate.swift in Sources */,
 				76AAFD602767A01200CE26D9 /* SquareBoxView.swift in Sources */,
 			);
