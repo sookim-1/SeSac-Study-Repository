@@ -13,6 +13,8 @@
 		76AAFD5127679EDD00CE26D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76AAFD4F27679EDD00CE26D9 /* Main.storyboard */; };
 		76AAFD5327679EE000CE26D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76AAFD5227679EE000CE26D9 /* Assets.xcassets */; };
 		76AAFD5627679EE000CE26D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76AAFD5427679EE000CE26D9 /* LaunchScreen.storyboard */; };
+		76AAFD5E27679FF100CE26D9 /* SquareBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76AAFD5D27679FF100CE26D9 /* SquareBoxView.xib */; };
+		76AAFD602767A01200CE26D9 /* SquareBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AAFD5F2767A01200CE26D9 /* SquareBoxView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		76AAFD5227679EE000CE26D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76AAFD5527679EE000CE26D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76AAFD5727679EE000CE26D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76AAFD5D27679FF100CE26D9 /* SquareBoxView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SquareBoxView.xib; sourceTree = "<group>"; };
+		76AAFD5F2767A01200CE26D9 /* SquareBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareBoxView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				76AAFD5227679EE000CE26D9 /* Assets.xcassets */,
 				76AAFD5427679EE000CE26D9 /* LaunchScreen.storyboard */,
 				76AAFD5727679EE000CE26D9 /* Info.plist */,
+				76AAFD5D27679FF100CE26D9 /* SquareBoxView.xib */,
+				76AAFD5F2767A01200CE26D9 /* SquareBoxView.swift */,
 			);
 			path = xibPractice;
 			sourceTree = "<group>";
@@ -128,6 +134,7 @@
 				76AAFD5627679EE000CE26D9 /* LaunchScreen.storyboard in Resources */,
 				76AAFD5327679EE000CE26D9 /* Assets.xcassets in Resources */,
 				76AAFD5127679EDD00CE26D9 /* Main.storyboard in Resources */,
+				76AAFD5E27679FF100CE26D9 /* SquareBoxView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +148,7 @@
 				76AAFD4E27679EDD00CE26D9 /* ViewController.swift in Sources */,
 				76AAFD4A27679EDD00CE26D9 /* AppDelegate.swift in Sources */,
 				76AAFD4C27679EDD00CE26D9 /* SceneDelegate.swift in Sources */,
+				76AAFD602767A01200CE26D9 /* SquareBoxView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,7 +314,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -334,7 +342,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

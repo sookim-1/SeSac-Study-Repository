@@ -9,9 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var favoriteMenuView: SquareBoxView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        favoriteMenuView.label.text = "즐겨찾기"
+        favoriteMenuView.imageView.image = UIImage(systemName: "star")
     }
 
 
