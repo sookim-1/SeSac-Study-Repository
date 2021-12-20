@@ -13,6 +13,7 @@
 		768CCCB42771351B0067CD9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 768CCCB32771351B0067CD9F /* Assets.xcassets */; };
 		768CCCB72771351B0067CD9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 768CCCB52771351B0067CD9F /* LaunchScreen.storyboard */; };
 		768CCCBF277136340067CD9F /* ShareBeerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CCCBE277136340067CD9F /* ShareBeerButton.swift */; };
+		768CCCC12771371D0067CD9F /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CCCC02771371D0067CD9F /* SearchTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		768CCCB62771351B0067CD9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		768CCCB82771351B0067CD9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		768CCCBE277136340067CD9F /* ShareBeerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareBeerButton.swift; sourceTree = "<group>"; };
+		768CCCC02771371D0067CD9F /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				768CCCB52771351B0067CD9F /* LaunchScreen.storyboard */,
 				768CCCB82771351B0067CD9F /* Info.plist */,
 				768CCCBE277136340067CD9F /* ShareBeerButton.swift */,
+				768CCCC02771371D0067CD9F /* SearchTextField.swift */,
 			);
 			path = beerProject;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				768CCCC12771371D0067CD9F /* SearchTextField.swift in Sources */,
 				768CCCAF277135190067CD9F /* ViewController.swift in Sources */,
 				768CCCBF277136340067CD9F /* ShareBeerButton.swift in Sources */,
 				768CCCAB277135190067CD9F /* AppDelegate.swift in Sources */,
