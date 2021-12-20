@@ -29,14 +29,20 @@ class ViewController: UIViewController {
     }
     
     @objc func presentVC() {
-        print("맥주정보받아오기")
+        let beerInfoVC = BeerInformationViewController()
+        beerInfoVC.beername = beerNameTextField.text
+        beerInfoVC.title = beerNameTextField.text
+        beerInfoVC.modalPresentationStyle = .fullScreen
+        self.present(beerInfoVC, animated: true, completion: nil)
+        
+        self.view.endEditing(true)
     }
     
     
     func configureLogoImageView() {
         view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        logoImageView.image = UIImage(systemName: "love")
+        logoImageView.image = UIImage(systemName: "paperplane.fill")
         
         NSLayoutConstraint.activate([
             logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),

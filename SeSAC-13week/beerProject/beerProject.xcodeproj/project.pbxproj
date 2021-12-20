@@ -14,6 +14,15 @@
 		768CCCB72771351B0067CD9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 768CCCB52771351B0067CD9F /* LaunchScreen.storyboard */; };
 		768CCCBF277136340067CD9F /* ShareBeerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CCCBE277136340067CD9F /* ShareBeerButton.swift */; };
 		768CCCC12771371D0067CD9F /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CCCC02771371D0067CD9F /* SearchTextField.swift */; };
+		768CCCC32771393F0067CD9F /* BeerInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CCCC22771393F0067CD9F /* BeerInformationViewController.swift */; };
+		768CCCC5277139950067CD9F /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CCCC4277139950067CD9F /* UIHelper.swift */; };
+		768CCCC7277139B80067CD9F /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CCCC6277139B80067CD9F /* Error.swift */; };
+		768CCCC927713A090067CD9F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CCCC827713A090067CD9F /* NetworkManager.swift */; };
+		768CCCCB27713AD40067CD9F /* ParsingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CCCCA27713AD40067CD9F /* ParsingModel.swift */; };
+		768CCCCD27713CEF0067CD9F /* BeerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CCCCC27713CEF0067CD9F /* BeerCollectionViewCell.swift */; };
+		768CCCCF27713D100067CD9F /* BeerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CCCCE27713D100067CD9F /* BeerImageView.swift */; };
+		768CCCD127713D440067CD9F /* BeerTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CCCD027713D440067CD9F /* BeerTitleLabel.swift */; };
+		768CCCD327713D550067CD9F /* BeerBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CCCD227713D550067CD9F /* BeerBodyLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +35,15 @@
 		768CCCB82771351B0067CD9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		768CCCBE277136340067CD9F /* ShareBeerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareBeerButton.swift; sourceTree = "<group>"; };
 		768CCCC02771371D0067CD9F /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
+		768CCCC22771393F0067CD9F /* BeerInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerInformationViewController.swift; sourceTree = "<group>"; };
+		768CCCC4277139950067CD9F /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		768CCCC6277139B80067CD9F /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		768CCCC827713A090067CD9F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		768CCCCA27713AD40067CD9F /* ParsingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingModel.swift; sourceTree = "<group>"; };
+		768CCCCC27713CEF0067CD9F /* BeerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCollectionViewCell.swift; sourceTree = "<group>"; };
+		768CCCCE27713D100067CD9F /* BeerImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerImageView.swift; sourceTree = "<group>"; };
+		768CCCD027713D440067CD9F /* BeerTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerTitleLabel.swift; sourceTree = "<group>"; };
+		768CCCD227713D550067CD9F /* BeerBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerBodyLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +84,15 @@
 				768CCCB82771351B0067CD9F /* Info.plist */,
 				768CCCBE277136340067CD9F /* ShareBeerButton.swift */,
 				768CCCC02771371D0067CD9F /* SearchTextField.swift */,
+				768CCCC22771393F0067CD9F /* BeerInformationViewController.swift */,
+				768CCCC4277139950067CD9F /* UIHelper.swift */,
+				768CCCC6277139B80067CD9F /* Error.swift */,
+				768CCCC827713A090067CD9F /* NetworkManager.swift */,
+				768CCCCA27713AD40067CD9F /* ParsingModel.swift */,
+				768CCCCC27713CEF0067CD9F /* BeerCollectionViewCell.swift */,
+				768CCCCE27713D100067CD9F /* BeerImageView.swift */,
+				768CCCD027713D440067CD9F /* BeerTitleLabel.swift */,
+				768CCCD227713D550067CD9F /* BeerBodyLabel.swift */,
 			);
 			path = beerProject;
 			sourceTree = "<group>";
@@ -140,11 +167,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				768CCCCD27713CEF0067CD9F /* BeerCollectionViewCell.swift in Sources */,
+				768CCCC927713A090067CD9F /* NetworkManager.swift in Sources */,
+				768CCCCF27713D100067CD9F /* BeerImageView.swift in Sources */,
+				768CCCC7277139B80067CD9F /* Error.swift in Sources */,
 				768CCCC12771371D0067CD9F /* SearchTextField.swift in Sources */,
 				768CCCAF277135190067CD9F /* ViewController.swift in Sources */,
+				768CCCD327713D550067CD9F /* BeerBodyLabel.swift in Sources */,
+				768CCCCB27713AD40067CD9F /* ParsingModel.swift in Sources */,
 				768CCCBF277136340067CD9F /* ShareBeerButton.swift in Sources */,
 				768CCCAB277135190067CD9F /* AppDelegate.swift in Sources */,
 				768CCCAD277135190067CD9F /* SceneDelegate.swift in Sources */,
+				768CCCD127713D440067CD9F /* BeerTitleLabel.swift in Sources */,
+				768CCCC32771393F0067CD9F /* BeerInformationViewController.swift in Sources */,
+				768CCCC5277139950067CD9F /* UIHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
