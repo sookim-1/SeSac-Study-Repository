@@ -1,26 +1,24 @@
 //
-//  NetworkManager.swift
+//  BeerNetworkManager.swift
 //  beerProject
 //
-//  Created by sookim on 2021/12/21.
+//  Created by sookim on 2021/12/27.
 //
 
 import Foundation
 import UIKit
 
-class NetworkManager {
-    static let shared = NetworkManager()
+final class BeerNetworkManager {
+    static let shared = BeerNetworkManager()
     
     private let baseURL = "https://api.punkapi.com/v2/"
     let cache = NSCache<NSString, UIImage>()
     
-    private init() {}
-    
-    func getBeers(for name: String, page: Int, completed: @escaping (Result<[Beer], ProjectError>) -> Void) {
-        let endpoint = baseURL + "beers?page=\(page)&per_page=25"
+    func getBeer(completed: @escaping (Result<BeerModel, ProjectError>) -> Void) {
+        let endpoint = baseURL + "beers/random"
         
         guard let url = URL(string: endpoint) else {
-            completed(.failure(.invalidBeername))
+            completed(.failure(.unableToComplete))
             return
         }
         
@@ -42,10 +40,8 @@ class NetworkManager {
             }
             
             do {
-                let decoder = JSONDecoder()
-//                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let beers = try decoder.decode([Beer].self, from: data)
-                completed(.success(beers))
+                let beer = try JSONDecoder().decode(BeerModel.self, from: data)
+                completed(.success(beer))
             } catch {
                 completed(.failure(.invalidData))
             }
@@ -54,4 +50,5 @@ class NetworkManager {
         
         task.resume()
     }
+    
 }

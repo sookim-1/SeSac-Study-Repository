@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		760A92752778E87D00379313 /* BeerMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760A92742778E87D00379313 /* BeerMainVC.swift */; };
+		760A92772778F65500379313 /* BeerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760A92762778F65500379313 /* BeerModel.swift */; };
+		760A92792778F75F00379313 /* BeerNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760A92782778F75F00379313 /* BeerNetworkManager.swift */; };
 		768CCCAB277135190067CD9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CCCAA277135190067CD9F /* AppDelegate.swift */; };
 		768CCCAD277135190067CD9F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CCCAC277135190067CD9F /* SceneDelegate.swift */; };
 		768CCCAF277135190067CD9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768CCCAE277135190067CD9F /* ViewController.swift */; };
@@ -26,6 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		760A92742778E87D00379313 /* BeerMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerMainVC.swift; sourceTree = "<group>"; };
+		760A92762778F65500379313 /* BeerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerModel.swift; sourceTree = "<group>"; };
+		760A92782778F75F00379313 /* BeerNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerNetworkManager.swift; sourceTree = "<group>"; };
 		768CCCA7277135190067CD9F /* beerProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = beerProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		768CCCAA277135190067CD9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		768CCCAC277135190067CD9F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +63,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		760A92732778E85600379313 /* BeerMain */ = {
+			isa = PBXGroup;
+			children = (
+				760A92742778E87D00379313 /* BeerMainVC.swift */,
+				760A92762778F65500379313 /* BeerModel.swift */,
+				760A92782778F75F00379313 /* BeerNetworkManager.swift */,
+				768CCCCE27713D100067CD9F /* BeerImageView.swift */,
+			);
+			path = BeerMain;
+			sourceTree = "<group>";
+		};
 		768CCC9E277135190067CD9F = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +93,7 @@
 		768CCCA9277135190067CD9F /* beerProject */ = {
 			isa = PBXGroup;
 			children = (
+				760A92732778E85600379313 /* BeerMain */,
 				768CCCAA277135190067CD9F /* AppDelegate.swift */,
 				768CCCAC277135190067CD9F /* SceneDelegate.swift */,
 				768CCCAE277135190067CD9F /* ViewController.swift */,
@@ -90,7 +108,6 @@
 				768CCCC827713A090067CD9F /* NetworkManager.swift */,
 				768CCCCA27713AD40067CD9F /* ParsingModel.swift */,
 				768CCCCC27713CEF0067CD9F /* BeerCollectionViewCell.swift */,
-				768CCCCE27713D100067CD9F /* BeerImageView.swift */,
 				768CCCD027713D440067CD9F /* BeerTitleLabel.swift */,
 				768CCCD227713D550067CD9F /* BeerBodyLabel.swift */,
 			);
@@ -170,11 +187,14 @@
 				768CCCCD27713CEF0067CD9F /* BeerCollectionViewCell.swift in Sources */,
 				768CCCC927713A090067CD9F /* NetworkManager.swift in Sources */,
 				768CCCCF27713D100067CD9F /* BeerImageView.swift in Sources */,
+				760A92792778F75F00379313 /* BeerNetworkManager.swift in Sources */,
 				768CCCC7277139B80067CD9F /* Error.swift in Sources */,
+				760A92752778E87D00379313 /* BeerMainVC.swift in Sources */,
 				768CCCC12771371D0067CD9F /* SearchTextField.swift in Sources */,
 				768CCCAF277135190067CD9F /* ViewController.swift in Sources */,
 				768CCCD327713D550067CD9F /* BeerBodyLabel.swift in Sources */,
 				768CCCCB27713AD40067CD9F /* ParsingModel.swift in Sources */,
+				760A92772778F65500379313 /* BeerModel.swift in Sources */,
 				768CCCBF277136340067CD9F /* ShareBeerButton.swift in Sources */,
 				768CCCAB277135190067CD9F /* AppDelegate.swift in Sources */,
 				768CCCAD277135190067CD9F /* SceneDelegate.swift in Sources */,

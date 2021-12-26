@@ -9,7 +9,7 @@ import UIKit
 
 class BeerImageView: UIImageView {
 
-    let cache = NetworkManager.shared.cache
+    let cache = BeerNetworkManager.shared.cache
     let placeholderImage = UIImage(systemName: "paperplane.fill")
 
     override init(frame: CGRect) {
